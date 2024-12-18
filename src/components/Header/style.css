@@ -1,0 +1,139 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vh;
+  background: linear-gradient(135deg, #8f9cc0, #0b1f57);
+  text-align: center;
+  color: var(--text);
+}
+
+.color-picker {
+  position: absolute;
+  top: 70px; /* Distância do topo */
+  right: 20px; /* Distância da borda direita */
+  display: flex;
+  flex-direction: column; /* Organiza os botões verticalmente */
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.color-picker button {
+  border: none;
+  padding: 15px;
+  transform: rotate(90deg);
+  border-radius: 15px 95px 110px 95px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.color-picker button:hover {
+  opacity: 0.8;
+}
+
+
+#button-red {
+  background-color: #ff1313e5;
+}
+
+#button-orange {
+  background-color: #ff8c13e5;
+}
+
+#button-yellow {
+  background-color: #fffa13e5;
+}
+
+#button-green {
+  background-color: #1bff13e5;
+}
+
+#button-teal {
+  background-color: #13ffe5e5;
+}
+
+#button-blue {
+  background-color: #13d0ffe5;
+}
+
+#button-purple {
+  background-color: #a313ffe5;
+}
+
+#button-pink {
+  background-color: #ff13cfe5;
+}
+
+#button-magenta {
+  background-color: #ff13ffe5;
+}
+
+
+.header-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--accent), #fbff006b);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitchText 5s infinite;
+}
+
+@keyframes glitchText {
+  0%, 100% { transform: none; text-shadow: var(--neon-glow); }
+  92% { transform: skew(-4deg); text-shadow: none; }
+  93% { transform: skew(4deg); text-shadow: var(--neon-glow); }
+  94% { transform: none; text-shadow: none; }
+  95% { transform: skew(2deg); text-shadow: var(--neon-glow); }
+  96% { transform: none; text-shadow: none; }
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0;
+}
+
+.header-content{
+  animation: apear 3000ms forwards;
+}
+
+@keyframes apear {
+  from {
+    opacity: 0; /* Começa transparente */
+    transform: translateY(50px); /* Vem de 50px abaixo */
+  }
+  to {
+    opacity: 1; /* Fica totalmente visível */
+    transform: translateY(0); /* Volta à posição original */
+  }
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  fill: var(--text);
+  transition: all 0.3s;
+}
+
+.social-icon svg{
+  margin-inline-start: 12px;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.social-icon svg:hover{
+  fill: var(--accent);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px var(--accent));
+}
+
+.icon{
+  width: 50px;
+}
