@@ -1,0 +1,64 @@
+/* --- Theme Switch --- */
+
+.theme-switcher {
+  position: absolute;
+  top: 12px;
+  left: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: apear 3000ms forwards;
+  animation: change-theme 1000ms forwards;
+  z-index: 10;
+}
+
+.theme-switcher button {
+  border: none;
+  left: -29px;
+  top: 80px;
+  position: absolute;
+  padding: 30px;
+  z-index: 2;
+  border-radius: 50%;
+  animation: apear 4000ms forwards;
+}
+
+.theme-switcher .line {
+  border: solid 2px var(--opposite);
+  top: -18px;
+  height: 95px;
+  position: absolute;
+  z-index: 1;
+  animation: apear 4000ms forwards;
+}
+
+.theme-switcher.sun button {
+  background-color: #f1c40f;
+  filter: drop-shadow(0 0 5px #f1c40f);
+}
+
+.theme-switcher.moon button {
+  background-color: #2a0042;
+  filter: drop-shadow(0 0 5px #2a0042);
+}
+
+@keyframes apear {
+  from {
+    opacity: 0;
+    transform: translateY(-800px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes change-theme {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-300px);
+  }
+}

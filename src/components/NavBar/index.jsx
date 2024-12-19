@@ -6,22 +6,27 @@ const Navbar = () => {
       <ul className="navbar-list">
         <li>
           <a href="#home" className="navbar-link">
-            Home
+            <b>Home</b>
           </a>
         </li>
         <li>
-          <a href="#work" className="navbar-link">
-            Work
+          <a href="#aboutMe" className="navbar-link">
+            <b>About Me</b>
           </a>
         </li>
         <li>
-          <a href="#about" className="navbar-link">
-            About
+          <a href="#skills" className="navbar-link">
+            <b>Skills</b>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" className="navbar-link">
+            <b>Projects</b>
           </a>
         </li>
         <li>
           <a href="#contact" className="navbar-link">
-            Contact
+            <b>Contact</b>
           </a>
         </li>
       </ul>

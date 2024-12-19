@@ -16,7 +16,7 @@ h2 {
 .project-cards .project-card {
   background: rgba(255, 255, 255, 0.1);
 
-  border-radius: 10px;
+  border-radius:  58px 26px;
   width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

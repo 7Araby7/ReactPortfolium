@@ -1,9 +1,9 @@
 import './style.css'; // CSS específico para o componente Work
 import ProjectCard from '../ProjectCard';
 
-const Work = () => (
-  <section className="section" id="work">
-    <h2>My Work</h2>
+const Projects = () => (
+  <section className="section" id="projects">
+    <h2>My Projects</h2>
     <div className="project-cards">
       <ProjectCard
         title="Project 1"
@@ -24,4 +24,4 @@ const Work = () => (
   </section>
 );
 
-export default Work;
+export default Projects;
