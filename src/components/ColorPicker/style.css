@@ -1,5 +1,18 @@
 /* --- Color Picker --- */
 
+.rgb {
+  border: solid 4px var(--opposite);
+  right: 47px;
+  top: 93px;
+  position: absolute;
+  padding: 30px;
+  z-index: 2;
+  animation:
+    apear-colors 4000ms forwards,
+    rgb-switch 9000ms infinite linear;
+  border-radius: 50%;
+}
+
 .color-picker {
   position: absolute;
   top: 200px;
@@ -11,25 +24,24 @@
   z-index: 10;
 }
 
-.color-picker .rgb {
-  border: solid 4px var(--opposite);
-  right: -5%;
-  top: -27%;
-  position: absolute;
-  padding: 30px;
-  z-index: 2;
-  animation: apear-colors 4000ms forwards, rgb-switch 9000ms infinite linear;
-  border-radius: 50%;
+.color-picker.on {
+  animation: reapear-colors 1000ms forwards;
 }
 
-.color-picker .line{
+.color-picker.off {
+  animation: disapear-colors 500ms forwards;
+}
+
+.color-picker .line {
   border: solid 2px var(--opposite);
   height: 490px;
   position: absolute;
   top: -40px;
   right: 45%;
   z-index: 1;
-  animation: apear-colors 4000ms forwards, rgb-switch 9000ms infinite linear;
+  animation:
+    apear-colors 4000ms forwards,
+    rgb-switch 9000ms infinite linear;
 }
 
 .color-picker button {
@@ -85,9 +97,9 @@
   filter: drop-shadow(0 0 5px #ff13ff);
 }
 
-
 @keyframes rgb-switch {
-  0%, 100% {
+  0%,
+  100% {
     background-color: #ff1313;
     filter: drop-shadow(0 0 20px #ff1313);
   }
@@ -127,11 +139,31 @@
 
 @keyframes apear-colors {
   from {
-    opacity: 0;
     transform: translateY(-800px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes reapear-colors {
+  from {
+    opacity: 0;
+    transform: translateY(800px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes disapear-colors {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
   }
 }
