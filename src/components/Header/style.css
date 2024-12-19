@@ -61,6 +61,26 @@
   width: 50px;
 }
 
+/* --- Lights --- */
+.light {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ccc 0%, var(--accent) 90%);
+  filter: drop-shadow(0 0 5px var(--opposite));
+  animation: moveLights 5s ease-in-out infinite;
+}
+
+.light:nth-child(odd) {
+  animation-duration: 7s;
+}
+
+.light:nth-child(even) {
+  animation-duration: 6s;
+}
+
+
 /* --- Keyframes --- */
 @keyframes glitchText {
   0%,
@@ -99,4 +119,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes moveLights {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-20px); }
+  70% { transform: translateY(20px); }
+
 }

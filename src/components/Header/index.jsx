@@ -7,8 +7,18 @@ import ColorPicker from '../ColorPicker/index.jsx';
 import ThemeSwitcher from '../ThemeSwitcher/index.jsx';
 
 const Header = ({ handleColor, handleThemeToggle, theme }) => {
+  const lights = Array.from({ length: 80 }, (_, index) => ({
+    id: index,
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
+  }));
+
   return (
     <header className="header" id="home">
+      {lights.map((light) => (
+        <div key={light.id} className="light" style={{ top: light.top, left: light.left }}></div>
+      ))}
+
       <div className="header-content">
         <h1>
           <b>Gabriel Brunhara</b>

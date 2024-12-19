@@ -34,12 +34,12 @@
 
 .theme-switcher.sun button {
   background-color: #f1c40f;
-  filter: drop-shadow(0 0 5px #f1c40f);
+  filter: drop-shadow(0 0 20px #f1c40f);
 }
 
 .theme-switcher.moon button {
   background-color: #2a0042;
-  filter: drop-shadow(0 0 5px #2a0042);
+  filter: drop-shadow(0 0 20px #2a0042);
 }
 
 @keyframes apear {
