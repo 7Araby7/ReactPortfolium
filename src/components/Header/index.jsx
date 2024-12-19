@@ -1,6 +1,5 @@
 import './style.css';
 import P from 'prop-types';
-import { useState } from 'react';
 
 import LinkedinIcon from '../../assets/LinkedinIcon.jsx';
 import GithubIcon from '../../assets/GithubIcon.jsx';
