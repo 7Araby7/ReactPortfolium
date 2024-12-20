@@ -1,6 +1,5 @@
 /* --- Color Picker --- */
 
-
 .color-picker {
   position: absolute;
   top: -410px;
@@ -31,13 +30,13 @@
 
 .rgb.in {
   animation:
-    rotate-right 1000ms forwards,
+    rotate-left 1000ms forwards,
     rgb-switch 9000ms infinite linear;
 }
 
 .rgb.out {
   animation:
-    rotate-left 1000ms forwards,
+    rotate-right 1000ms forwards,
     rgb-switch 9000ms infinite linear;
 }
 

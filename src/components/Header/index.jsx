@@ -6,7 +6,7 @@ import GithubIcon from '../../assets/GithubIcon.jsx';
 import ColorPicker from '../ColorPicker/index.jsx';
 import ThemeSwitcher from '../ThemeSwitcher/index.jsx';
 
-const Header = ({ handleColor, handleThemeToggle, theme }) => {
+const Header = ({ handleColor, handleThemeToggle }) => {
   const lights = Array.from({ length: 80 }, (_, index) => ({
     id: index,
     top: `${Math.random() * 100}%`,
@@ -28,10 +28,10 @@ const Header = ({ handleColor, handleThemeToggle, theme }) => {
         </p>
         <div className="social-icon">
           <a href="https://github.com/7Araby7" target="_blank">
-            <GithubIcon color={theme === 'dark' ? 'white' : '#2b2b2b'} />
+            <GithubIcon color="var(--text)" />
           </a>
           <a href="https://www.linkedin.com/in/gabriel-brunhara-049b43248/" target="_blank">
-            <LinkedinIcon color={theme === 'dark' ? 'white' : '#2b2b2b'} />
+            <LinkedinIcon color="var(--text)" />
           </a>
         </div>
       </div>

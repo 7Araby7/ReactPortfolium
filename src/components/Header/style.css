@@ -8,7 +8,7 @@
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(225deg, var(--secondary) 65%, var(--accent) 100%);
-  text-align: center; 
+  text-align: center;
   color: var(--text);
 }
 
@@ -25,6 +25,8 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: glitchText 5s infinite;
+  pointer-events: none;
+  user-select: none;
 }
 
 .header-content p {

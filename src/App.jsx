@@ -26,7 +26,7 @@ function App() {
   return (
     <div className={`container ${theme}-theme`} id={`color-${color}`}>
       <NavBar />
-      <Header handleColor={handleColor} handleThemeToggle={handleThemeToggle} theme={theme} />
+      <Header handleColor={handleColor} handleThemeToggle={handleThemeToggle} />
       <Skills />
       <Projects />
       <Contact />
