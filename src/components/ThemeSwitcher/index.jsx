@@ -19,7 +19,10 @@ const ThemeSwitcher = ({ handleThemeToggle }) => {
 
   return (
     <div className={`theme-switcher ${themeChanger ? 'sun' : 'moon'}`}>
-      <button onClick={handleClick}></button>
+      <button onClick={handleClick}>
+        <div className="hole"></div>
+        <div className="hole"></div>
+      </button>
       <div className="line"></div>
     </div>
   );

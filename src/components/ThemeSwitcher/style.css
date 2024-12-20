@@ -42,6 +42,25 @@
   filter: drop-shadow(0 0 20px #2a0042);
 }
 
+.theme-switcher.moon .hole {
+  position: fixed;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.562);
+}
+
+.theme-switcher.moon .hole:nth-child(1) {
+  left: 10px;
+  top: 15%;
+  padding: 12px;
+}
+
+.theme-switcher.moon .hole:nth-child(2) {
+  right: 10px;
+  bottom: 25%;
+  padding: 5px;
+}
+
 @keyframes apear {
   from {
     opacity: 0;

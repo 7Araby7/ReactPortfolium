@@ -1,21 +1,9 @@
 /* --- Color Picker --- */
 
-.rgb {
-  border: solid 4px var(--opposite);
-  right: 47px;
-  top: 93px;
-  position: absolute;
-  padding: 30px;
-  z-index: 2;
-  animation:
-    apear-colors 4000ms forwards,
-    rgb-switch 9000ms infinite linear;
-  border-radius: 50%;
-}
 
 .color-picker {
   position: absolute;
-  top: 200px;
+  top: -410px;
   right: 50px;
   display: flex;
   flex-direction: column;
@@ -28,15 +16,40 @@
   animation: reapear-colors 1000ms forwards;
 }
 
+.rgb {
+  border: none;
+  right: 0px;
+  bottom: -167px;
+  position: absolute;
+  padding: 30px;
+  z-index: 2;
+  animation:
+    apear-colors 4000ms forwards,
+    rgb-switch 9000ms infinite linear;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.rgb.in {
+  animation:
+    rotate-right 1000ms forwards,
+    rgb-switch 9000ms infinite linear;
+}
+
+.rgb.out {
+  animation:
+    rotate-left 1000ms forwards,
+    rgb-switch 9000ms infinite linear;
+}
+
 .color-picker.off {
   animation: disapear-colors 500ms forwards;
 }
 
 .color-picker .line {
   border: solid 2px var(--opposite);
-  height: 490px;
+  height: 600px;
   position: absolute;
-  top: -40px;
+  top: -100px;
   right: 45%;
   z-index: 1;
   animation:
@@ -44,7 +57,7 @@
     rgb-switch 9000ms infinite linear;
 }
 
-.color-picker button {
+.color-picker .btn {
   margin: 2.5px;
   border: none;
   padding: 15px 30px;
@@ -55,7 +68,7 @@
   z-index: 2;
 }
 
-.color-picker button:hover ~ button {
+.color-picker .btn:hover ~ .btn {
   transform: translateY(50px) rotate(140deg);
 }
 
@@ -148,22 +161,36 @@
 
 @keyframes reapear-colors {
   from {
-    opacity: 0;
-    transform: translateY(800px);
+    transform: translateY(0);
   }
   to {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(490px);
   }
 }
 
 @keyframes disapear-colors {
   from {
-    opacity: 1;
-    pointer-events: all;
+    transform: translateY(490px);
   }
   to {
-    opacity: 0;
-    pointer-events: none;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate-right {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-left {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
   }
 }
