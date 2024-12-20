@@ -2,7 +2,7 @@
 
 .color-picker {
   position: absolute;
-  top: -410px;
+  bottom: 800px;
   right: 50px;
   display: flex;
   flex-direction: column;
@@ -17,15 +17,15 @@
 
 .rgb {
   border: none;
-  right: 0px;
-  bottom: -167px;
-  position: absolute;
+  margin-top: 99px;
+  position: relative;
   padding: 30px;
   z-index: 2;
   animation:
     apear-colors 4000ms forwards,
     rgb-switch 9000ms infinite linear;
-  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  /* clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); */
+  border-radius: 95px 15px 110px 95px;
 }
 
 .rgb.in {
@@ -36,7 +36,7 @@
 
 .rgb.out {
   animation:
-    rotate-right 1000ms forwards,
+    rotate-right 500ms forwards,
     rgb-switch 9000ms infinite linear;
 }
 
@@ -191,13 +191,13 @@
     transform: rotate(0);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
   }
 }
 
 @keyframes rotate-left {
   from {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
   }
   to {
     transform: rotate(0);
