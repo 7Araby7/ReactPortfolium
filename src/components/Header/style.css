@@ -8,6 +8,7 @@
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(225deg, var(--secondary) 65%, var(--accent) 100%);
+  /* background: radial-gradient(circle, var(--secondary) 50%, var(--accent) 100%); */
   text-align: center;
   color: var(--text);
 }
@@ -18,7 +19,7 @@
 }
 
 .header-content h1 {
-  font-size: 4rem;
+  font-size: 10vh;
   font-weight: bold;
   margin-bottom: 1rem;
   background: var(--accent);
@@ -30,7 +31,7 @@
 }
 
 .header-content p {
-  font-size: 1.5rem;
+  font-size: 3vh;
   color: var(--text);
   margin-top: 0;
 }
@@ -50,7 +51,6 @@
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
 }
 
 .social-icon svg:hover {
@@ -60,16 +60,15 @@
 }
 
 .icon {
-  width: 50px;
+  width: 7vh;
 }
 
 /* --- Lights --- */
 .light {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  padding: 0.3vh;
   border-radius: 50%;
-  background: radial-gradient(circle, #ccc 0%, var(--accent) 90%);
+  background: radial-gradient(circle, var(--opposite) 0%, var(--accent) 100%);
   filter: drop-shadow(0 0 5px var(--opposite));
   animation: moveLights 5s ease-in-out infinite;
 }

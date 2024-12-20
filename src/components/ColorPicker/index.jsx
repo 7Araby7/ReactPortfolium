@@ -25,6 +25,8 @@ const ColorPicker = ({ handleColor }) => {
         <button className="btn" id="button-purple" onClick={() => handleColor('purple')}></button>
         <button className="btn" id="button-pink" onClick={() => handleColor('pink')}></button>
         <button className="btn" id="button-magenta" onClick={() => handleColor('magenta')}></button>
+        {/* <button className="btn" id="button-dark" onClick={() => handleColor('dark')}></button>
+        <button className="btn" id="button-light" onClick={() => handleColor('light')}></button> */}
         <button className={`rgb ${rotate === 2 ? '' : rotate === 1 ? 'in' : 'out'}`} onClick={handleClick}></button>
         <div className="line"></div>
       </div>
