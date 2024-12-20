@@ -25,8 +25,8 @@
 
 .theme-switcher .line {
   border: solid 2px var(--opposite);
-  top: -18px;
-  height: 95px;
+  top: -58px;
+  height: 135px;
   position: absolute;
   z-index: 1;
   animation: apear 4000ms forwards;
