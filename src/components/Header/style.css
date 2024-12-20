@@ -8,13 +8,13 @@
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(225deg, var(--secondary) 65%, var(--accent) 100%);
-  text-align: center;
+  text-align: center; 
   color: var(--text);
 }
 
 /* --- Header Content --- */
 .header-content {
-  animation: apear-content 3000ms forwards;
+  animation: apear-content 4000ms forwards;
 }
 
 .header-content h1 {
