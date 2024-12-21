@@ -2,7 +2,7 @@
 
 .color-picker {
   position: absolute;
-  bottom: 800px;
+  top: -410px;
   right: 50px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
 
 .rgb {
   border: none;
-  margin-top: 99px;
+  margin-top: 98px;
   position: relative;
   padding: 30px;
   z-index: 2;
@@ -36,7 +36,7 @@
 
 .rgb.out {
   animation:
-    rotate-right 500ms forwards,
+    rotate-right 1000ms forwards,
     rgb-switch 9000ms infinite linear;
 }
 
@@ -191,13 +191,13 @@
     transform: rotate(0);
   }
   to {
-    transform: rotate(720deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-left {
   from {
-    transform: rotate(720deg);
+    transform: rotate(360deg);
   }
   to {
     transform: rotate(0);
