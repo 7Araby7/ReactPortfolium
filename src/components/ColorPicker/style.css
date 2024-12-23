@@ -36,39 +36,39 @@
 /* Aplique o valor de --i de 1 até 10 */
 .color-picker .btn:nth-child(1) {
   --i: 1;
-  left: 63px;
+  left: 8.1vh;
 }
 .color-picker .btn:nth-child(2) {
   --i: 2;
-  left: 56px;
+  left: 7.2vh;
 }
 .color-picker .btn:nth-child(3) {
   --i: 3;
-  left: 49px;
+  left: 6.3vh;
 }
 .color-picker .btn:nth-child(4) {
   --i: 4;
-  left: 42px;
+  left: 5.4vh;
 }
 .color-picker .btn:nth-child(5) {
   --i: 5;
-  left: 35px;
+  left: 4.5vh;
 }
 .color-picker .btn:nth-child(6) {
   --i: 6;
-  left: 28px;
+  left: 3.6vh;
 }
 .color-picker .btn:nth-child(7) {
   --i: 7;
-  left: 21px;
+  left: 2.7vh;
 }
 .color-picker .btn:nth-child(8) {
   --i: 8;
-  left: 14px;
+  left: 1.8vh;
 }
 .color-picker .btn:nth-child(9) {
   --i: 9;
-  left: 7px;
+  left: 0.9vh;
 }
 .color-picker .btn:nth-child(10) {
   --i: 10;
