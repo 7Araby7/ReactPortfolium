@@ -18,22 +18,93 @@
   animation: apear-content 4000ms forwards;
 }
 
-.header-content h1 {
-  font-size: 10vh;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  background: var(--accent);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glitchText 5s infinite;
-  pointer-events: none;
-  user-select: none;
+p {
+  font-size: 2.5vh;
+  position: relative;
+  font-family: 'Exo 2';
+  left: 10px;
+  margin: 3px;
+  color: var(--accent);
 }
 
-.header-content p {
-  font-size: 3vh;
+p:nth-child(1){
+  text-align: left;
+  left: -10px;
+
+}
+
+p:nth-child(3){
+  text-align: right;
+
+}
+
+.name {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.name h1:nth-child(1){
+  animation-delay: 0s;
+}
+.name h1:nth-child(2){
+  animation-delay: 0.2s;
+}
+.name h1:nth-child(3){
+  animation-delay: 0.4s;
+}
+.name h1:nth-child(4){
+  animation-delay: 0.6s;
+}
+.name h1:nth-child(5){
+  animation-delay: 0.8s;
+}
+.name h1:nth-child(6){
+  animation-delay: 1s;
+}
+.name h1:nth-child(7){
+  animation-delay: 1.2s;
+}
+.name h1:nth-child(8){
+  width: 0.5em;
+  display: inline-block;
+  animation-delay: 1.4s;
+}
+.name h1:nth-child(9){
+  animation-delay: 1.6s;
+}
+.name h1:nth-child(10){
+  animation-delay: 1.8s;
+}
+.name h1:nth-child(11){
+  animation-delay: 2s;
+}
+.name h1:nth-child(12){
+  animation-delay: 2.2s;
+}
+.name h1:nth-child(13){
+  animation-delay: 2.4s;
+}
+.name h1:nth-child(14){
+  animation-delay: 2.6s;
+}
+.name h1:nth-child(15){
+  animation-delay: 2.8s;
+}
+.name h1:nth-child(16){
+  animation-delay: 3s;
+}
+
+
+.header-content h1 {
+  margin-top: 0px;
+  font-size: 8vh;
+  font-weight: bold;
+  margin-bottom: 0px;
   color: var(--text);
-  margin-top: 0;
+  pointer-events: none;
+  user-select: none;
+  animation: lighting 1.3s alternate infinite;
 }
 
 /* --- Social Icons --- */
@@ -60,7 +131,7 @@
 }
 
 .icon {
-  width: 7vh;
+  width: 5.5vh;
 }
 
 /* --- Lights --- */
@@ -81,9 +152,8 @@
   animation-duration: 6s;
 }
 
-
 /* --- Keyframes --- */
-@keyframes glitchText {
+/* @keyframes glitchText {
   0%,
   100% {
     transform: none;
@@ -109,6 +179,24 @@
     transform: none;
     text-shadow: none;
   }
+} */
+
+@keyframes lighting
+{
+	0% {
+		color: var(--text);
+		text-shadow: none;
+	}
+
+	50% {
+		color: var(--text);
+		text-shadow: none;
+	}
+
+	100% {
+		color: var(--accent);
+		text-shadow: var(--neon-glow);
+	}
 }
 
 @keyframes apear-content {
@@ -123,8 +211,14 @@
 }
 
 @keyframes moveLights {
-  0%, 100% { transform: translateY(0); }
-  30% { transform: translateY(-20px); }
-  70% { transform: translateY(20px); }
-
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-20px);
+  }
+  70% {
+    transform: translateY(20px);
+  }
 }

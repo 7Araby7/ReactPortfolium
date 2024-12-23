@@ -20,11 +20,61 @@ const Header = ({ handleColor, handleThemeToggle }) => {
       ))}
 
       <div className="header-content">
-        <h1>
-          <b>Gabriel Brunhara</b>
-        </h1>
         <p>
-          <b>Creative Developer & Digital Innovator</b>
+          <b>Welcome! I'm</b>
+        </p>
+        <div className="name">
+          <h1>
+            <b>G</b>
+          </h1>
+          <h1>
+            <b>a</b>
+          </h1>
+          <h1>
+            <b>b</b>
+          </h1>
+          <h1>
+            <b>r</b>
+          </h1>
+          <h1>
+            <b>i</b>
+          </h1>
+          <h1>
+            <b>e</b>
+          </h1>
+          <h1>
+            <b>l</b>
+          </h1>
+          <h1>
+            <b> </b>
+          </h1>
+          <h1>
+            <b>B</b>
+          </h1>
+          <h1>
+            <b>r</b>
+          </h1>
+          <h1>
+            <b>u</b>
+          </h1>
+          <h1>
+            <b>n</b>
+          </h1>
+          <h1>
+            <b>h</b>
+          </h1>
+          <h1>
+            <b>a</b>
+          </h1>
+          <h1>
+            <b>r</b>
+          </h1>
+          <h1>
+            <b>a</b>
+          </h1>
+        </div>
+        <p>
+          <b>And I bring designs to life on the web.</b>
         </p>
         <div className="social-icon">
           <a href="https://github.com/7Araby7" target="_blank">

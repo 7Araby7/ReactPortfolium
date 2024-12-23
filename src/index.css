@@ -46,50 +46,52 @@ body {
 
 #color-themeChange {
   --accent: var(--opposite);
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-red {
   --accent: #ff1313e5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-orange {
   --accent: #ff8c13e5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-yellow {
   --accent: #fffa13e5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-green {
   --accent: #1bff13e5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-teal {
   --accent: #13ffe5e5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-blue {
   --accent: #13d0ffe5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-purple {
   --accent: #a313ffe5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-pink {
   --accent: #ff13cfe5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
 
 #color-magenta {
   --accent: #ff13ffe5;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  --neon-glow: 0 0 30px var(--accent);
 }
+
+/* --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent); */
