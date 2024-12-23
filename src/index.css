@@ -44,13 +44,8 @@ body {
   scroll-behavior: smooth;
 }
 
-#color-dark {
-  --accent: #242424;
-  --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
-}
-
-#color-light {
-  --accent: white;
+#color-themeChange {
+  --accent: var(--opposite);
   --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
 }
 

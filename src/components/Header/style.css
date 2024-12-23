@@ -8,7 +8,7 @@
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(225deg, var(--secondary) 65%, var(--accent) 100%);
-  /* background: radial-gradient(circle, var(--secondary) 50%, var(--accent) 100%); */
+  background: radial-gradient(ellipse 60% 46% at bottom, var(--accent) 0%, var(--secondary) 90%);
   text-align: center;
   color: var(--text);
 }

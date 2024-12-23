@@ -2,7 +2,7 @@
 
 .color-picker {
   position: absolute;
-  top: -410px;
+  top: -455px;
   right: 50px;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
 
 .color-picker .line {
   border: solid 2px var(--opposite);
-  height: 600px;
+  height: 645px;
   position: absolute;
   top: -100px;
   right: 45%;
@@ -72,15 +72,10 @@
 }
 
 /* --- Color Buttons --- */
-/* #button-dark {
-  background-color: #242424;
+#button-theme {
+  background-color: var(--opposite);
   filter: drop-shadow(0 0 5px #242424);
 }
-
-#button-light {
-  background-color: white;
-  filter: drop-shadow(0 0 5px white);
-} */
 
 #button-red {
   background-color: #ff1313;
@@ -173,13 +168,13 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(490px);
+    transform: translateY(535px);
   }
 }
 
 @keyframes disapear-colors {
   from {
-    transform: translateY(490px);
+    transform: translateY(535px);
   }
   to {
     transform: translateY(0);
