@@ -21,7 +21,7 @@ const Header = ({ handleColor, handleThemeToggle }) => {
 
       <div className="header-content">
         <p>
-          <b>Welcome! I'm</b>
+          <b>Hey there, my name is</b>
         </p>
         <div className="name">
           <h1>

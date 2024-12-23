@@ -2,199 +2,144 @@
 
 .color-picker {
   position: absolute;
-  top: -455px;
-  right: 50px;
+  /*bottom: 1.25vw;
+  right: 1.9vw;*/
+  bottom: 2.7vh;
+  right: 3.8vh;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  animation: apear-colors 3000ms forwards;
+  gap: -4px;
   z-index: 10;
 }
 
-.color-picker.on {
-  animation: reapear-colors 1000ms forwards;
-}
-
-.rgb {
-  border: none;
-  margin-top: 98px;
-  position: relative;
-  padding: 30px;
-  z-index: 2;
-  animation:
-    apear-colors 4000ms forwards,
-    rgb-switch 9000ms infinite linear;
-  /* clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); */
-  border-radius: 95px 15px 110px 95px;
-}
-
-.rgb.in {
-  animation:
-    rotate-left 1000ms forwards,
-    rgb-switch 9000ms infinite linear;
-}
-
-.rgb.out {
-  animation:
-    rotate-right 1000ms forwards,
-    rgb-switch 9000ms infinite linear;
-}
-
-.color-picker.off {
-  animation: disapear-colors 500ms forwards;
-}
-
-.color-picker .line {
-  border: solid 2px var(--opposite);
-  height: 645px;
-  position: absolute;
-  top: -100px;
-  right: 45%;
-  z-index: 1;
-  animation:
-    apear-colors 4000ms forwards,
-    rgb-switch 9000ms infinite linear;
-}
-
 .color-picker .btn {
-  margin: 2.5px;
+  margin: 0;
   border: none;
-  padding: 15px 30px;
-  transform: rotate(140deg);
-  border-radius: 30px 0px 60px 0px;
+  padding: 1.6vh 3.2vh;
+  /* padding: 0.7vw 1.4vw; */
+  transform: rotate(225deg);
+  border-radius: 60px 0px 30px 0px;
   cursor: pointer;
-  font-size: 1rem;
   z-index: 2;
+  opacity: 0;
+  animation: apear-colors 3000ms forwards;
 }
 
-.color-picker .btn:hover ~ .btn {
-  transform: translateY(50px) rotate(140deg);
+.color-picker .btn:hover {
+  transform: scale(1.3) rotate(225deg);
+}
+
+/* Incrementando o animation-delay de 0.2s em 0.2s */
+.color-picker .btn {
+  animation-delay: calc(0.15s * (var(--i, 1) - 1));
+}
+
+/* Aplique o valor de --i de 1 até 10 */
+.color-picker .btn:nth-child(1) {
+  --i: 1;
+  left: 63px;
+}
+.color-picker .btn:nth-child(2) {
+  --i: 2;
+  left: 56px;
+}
+.color-picker .btn:nth-child(3) {
+  --i: 3;
+  left: 49px;
+}
+.color-picker .btn:nth-child(4) {
+  --i: 4;
+  left: 42px;
+}
+.color-picker .btn:nth-child(5) {
+  --i: 5;
+  left: 35px;
+}
+.color-picker .btn:nth-child(6) {
+  --i: 6;
+  left: 28px;
+}
+.color-picker .btn:nth-child(7) {
+  --i: 7;
+  left: 21px;
+}
+.color-picker .btn:nth-child(8) {
+  --i: 8;
+  left: 14px;
+}
+.color-picker .btn:nth-child(9) {
+  --i: 9;
+  left: 7px;
+}
+.color-picker .btn:nth-child(10) {
+  --i: 10;
+}
+
+.btn .hole {
+  position: absolute;
+  padding: 0%;
+  margin: 0;
+  right: 2%;
+  /* width: 0.95vw;
+  height: 0.95vw; */
+  bottom: 10%;
+  width: 40%;
+  height: 80%;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.7;
 }
 
 /* --- Color Buttons --- */
 #button-theme {
   background-color: var(--opposite);
-  filter: drop-shadow(0 0 5px #242424);
+  filter: drop-shadow(0 0 3.5px var(--opposite));
 }
 
 #button-red {
   background-color: #ff1313;
-  filter: drop-shadow(0 0 5px #ff1313);
+  filter: drop-shadow(0 0 3.5px #ff1313);
 }
 #button-orange {
   background-color: #ff8d13;
-  filter: drop-shadow(0 0 5px #ff8d13);
+  filter: drop-shadow(0 0 3.5px #ff8d13);
 }
 #button-yellow {
   background-color: #fffb13;
-  filter: drop-shadow(0 0 5px #fffb13);
+  filter: drop-shadow(0 0 3.5px #fffb13);
 }
 #button-green {
   background-color: #1bff13;
-  filter: drop-shadow(0 0 5px #1bff13);
+  filter: drop-shadow(0 0 3.5px #1bff13);
 }
 #button-teal {
   background-color: #13ffe3;
-  filter: drop-shadow(0 0 5px #13ffe3);
+  filter: drop-shadow(0 0 3.5px #13ffe3);
 }
 #button-blue {
   background-color: #13d0ff;
-  filter: drop-shadow(0 0 5px #13d0ff);
+  filter: drop-shadow(0 0 3.5px #13d0ff);
 }
 #button-purple {
   background-color: #a513ff;
-  filter: drop-shadow(0 0 5px #a513ff);
+  filter: drop-shadow(0 0 3.5px #a513ff);
 }
 #button-pink {
   background-color: #ff13d0;
-  filter: drop-shadow(0 0 5px #ff13d0);
+  filter: drop-shadow(0 0 3.5px #ff13d0);
 }
 #button-magenta {
   background-color: #ff13ff;
-  filter: drop-shadow(0 0 5px #ff13ff);
-}
-
-@keyframes rgb-switch {
-  0%,
-  100% {
-    background-color: #ff1313;
-    filter: drop-shadow(0 0 20px #ff1313);
-  }
-  11% {
-    background-color: #ff8d13;
-    filter: drop-shadow(0 0 20px #ff8d13);
-  }
-  22% {
-    background-color: #fffb13;
-    filter: drop-shadow(0 0 20px #fffb13);
-  }
-  33% {
-    background-color: #1bff13;
-    filter: drop-shadow(0 0 20px #1bff13);
-  }
-  44% {
-    background-color: #13ffe3;
-    filter: drop-shadow(0 0 20px #13ffe3);
-  }
-  55% {
-    background-color: #13d0ff;
-    filter: drop-shadow(0 0 20px #13d0ff);
-  }
-  66% {
-    background-color: #a513ff;
-    filter: drop-shadow(0 0 20px #a513ff);
-  }
-  77% {
-    background-color: #ff13d0;
-    filter: drop-shadow(0 0 20px #ff13d0);
-  }
-  88% {
-    background-color: #ff13ff;
-    filter: drop-shadow(0 0 20px #ff13ff);
-  }
+  filter: drop-shadow(0 0 3.5px #ff13ff);
 }
 
 @keyframes apear-colors {
-  from {
-    transform: translateY(-800px);
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: translateY(0);
+  20% {
+    opacity: 0;
   }
-}
-
-@keyframes reapear-colors {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(535px);
-  }
-}
-
-@keyframes disapear-colors {
-  from {
-    transform: translateY(535px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes rotate-right {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate-left {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0);
+  100% {
+    opacity: 1;
   }
 }

@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  animation: apear 3000ms forwards;
   animation: change-theme 1000ms forwards;
   z-index: 10;
 }
@@ -20,7 +19,7 @@
   padding: 30px;
   z-index: 2;
   border-radius: 50%;
-  animation: apear 4000ms forwards;
+  animation: apear-theme 3000ms forwards;
 }
 
 .theme-switcher .line {
@@ -29,23 +28,23 @@
   height: 135px;
   position: absolute;
   z-index: 1;
-  animation: apear 4000ms forwards;
+  animation: apear-theme 3000ms forwards;
 }
 
 .theme-switcher.sun button {
-  background-color: #f1c40f;
-  filter: drop-shadow(0 0 20px #f1c40f);
+  background-color: var(--opposite);
+  filter: drop-shadow(0 0 20px var(--opposite));
 }
 
 .theme-switcher.moon button {
-  background-color: #2a0042;
-  filter: drop-shadow(0 0 20px #2a0042);
+  background-color: var(--opposite);
+  filter: drop-shadow(0 0 20px var(--opposite));
 }
 
 .theme-switcher.moon .hole {
   position: fixed;
   border-radius: 50%;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.562);
 }
 
@@ -61,7 +60,7 @@
   padding: 5px;
 }
 
-@keyframes apear {
+@keyframes apear-theme {
   from {
     opacity: 0;
     transform: translateY(-800px);
