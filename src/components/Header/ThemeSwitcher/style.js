@@ -3,8 +3,10 @@ import styled, { keyframes, css } from 'styled-components';
 // Animações
 const apearTheme = keyframes`
   from {
-    opacity: 0;
-    transform: translateY(-800px);
+    /* opacity: 0;
+    transform: translateY(-800px); */
+    opacity: 1;
+    transform: translateY(0);
   }
   to {
     opacity: 1;
