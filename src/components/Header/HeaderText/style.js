@@ -26,19 +26,19 @@ export const Paragraph = styled.p`
   font-size: 2.5vh;
   position: relative;
   font-family: 'Exo 2';
-  left: 10px;
-  margin: 3px;
+  margin: 0.3vh;
   color: var(--accent);
   pointer-events: none;
   user-select: none;
 
   &:nth-child(1) {
     text-align: left;
-    left: -10px;
+    left: -1vh;
   }
 
   &:nth-child(3) {
     text-align: right;
+    left: 1vh;
   }
 `;
 
@@ -65,7 +65,7 @@ export const Letter = styled.h1`
     width: 0.5em;
     display: inline-block;
   } */
-    
+
   ${({ index }) =>
     index === 7 &&
     css`
