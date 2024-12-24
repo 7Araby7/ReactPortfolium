@@ -248,10 +248,8 @@ Error generating stack: `+o.message+`
   filter: drop-shadow(0 0 3.5px var(--opposite));
 `,Qf=({handleColor:i})=>E.jsxs(wm,{children:[E.jsx(Sm,{index:1,onClick:()=>i("red"),children:E.jsx(Rt,{})}),E.jsx(km,{index:2,onClick:()=>i("orange"),children:E.jsx(Rt,{})}),E.jsx(xm,{index:3,onClick:()=>i("yellow"),children:E.jsx(Rt,{})}),E.jsx(Em,{index:4,onClick:()=>i("green"),children:E.jsx(Rt,{})}),E.jsx(Cm,{index:5,onClick:()=>i("teal"),children:E.jsx(Rt,{})}),E.jsx(_m,{index:6,onClick:()=>i("blue"),children:E.jsx(Rt,{})}),E.jsx(Pm,{index:7,onClick:()=>i("purple"),children:E.jsx(Rt,{})}),E.jsx(Nm,{index:8,onClick:()=>i("pink"),children:E.jsx(Rt,{})}),E.jsx(jm,{index:9,onClick:()=>i("magenta"),children:E.jsx(Rt,{})}),E.jsx(Tm,{index:10,onClick:()=>i("themeChange"),children:E.jsx(Rt,{})})]});Qf.propTypes={handleColor:Qt.func.isRequired};const Yf=sr`
   from {
-    /* opacity: 0;
-    transform: translateY(-800px); */
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(-800px);
   }
   to {
     opacity: 1;
