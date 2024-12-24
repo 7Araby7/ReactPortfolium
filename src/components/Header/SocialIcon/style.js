@@ -10,8 +10,8 @@ export const SocialIcon = styled.div`
   transition: all 0.3s;
 
   svg {
-    margin-inline-start: 12px;
-    margin-top: 2rem;
+    margin-inline-start: 1.2vh;
+    margin-top: 3.2vh;
     display: flex;
     justify-content: center;
     width: 5.5vh;

@@ -3,8 +3,10 @@ import styled, { keyframes, css } from 'styled-components';
 // Animações
 const apearTheme = keyframes`
   from {
-    opacity: 0;
-    transform: translateY(-800px);
+    /* opacity: 0;
+    transform: translateY(-800px); */
+    opacity: 1;
+    transform: translateY(0);
   }
   to {
     opacity: 1;
@@ -27,11 +29,11 @@ const changeTheme = keyframes`
 // Componentes Styled
 export const ThemeSwitcher = styled.div`
   position: absolute;
-  top: 12px;
-  left: 80px;
+  top: 1.2vh;
+  left: 8vh;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1vh;
   z-index: 10;
 
   ${({ animate }) =>
@@ -50,10 +52,10 @@ export const ThemeSwitcher = styled.div`
 
 export const Button = styled.button`
   border: none;
-  left: -29px;
-  top: 80px;
+  left: -2.9vh;
+  top: 8vh;
   position: absolute;
-  padding: 30px;
+  padding: 3vh;
   z-index: 2;
   border-radius: 50%;
   animation: ${apearTheme} 3000ms forwards;
@@ -62,9 +64,9 @@ export const Button = styled.button`
 `;
 
 export const Line = styled.div`
-  border: solid 2px var(--opposite);
-  top: -58px;
-  height: 135px;
+  border: solid 0.3vh var(--opposite);
+  top: -5.8vh;
+  height: 13.5vh;
   position: absolute;
   z-index: 1;
   animation: ${apearTheme} 3000ms forwards;
