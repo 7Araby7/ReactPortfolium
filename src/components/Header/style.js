@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 // Animação para o conteúdo do header
 const appearContent = keyframes`
   from {
-    opacity: 0;
+    opacity: 0;  /* adad */
     transform: translateY(100px);
   }
   to {
