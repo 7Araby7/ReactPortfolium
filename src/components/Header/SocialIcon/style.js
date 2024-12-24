@@ -20,6 +20,6 @@ export const SocialIcon = styled.div`
   svg:hover {
     fill: var(--accent);
     transform: scale(1.1);
-    filter: drop-shadow(0 0 5px var(--accent));
+    filter: drop-shadow(0 0 0.5vh var(--accent));
   }
 `;

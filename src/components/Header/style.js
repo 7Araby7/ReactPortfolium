@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 const appearContent = keyframes`
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(10vh);
   }
   to {
     opacity: 1;

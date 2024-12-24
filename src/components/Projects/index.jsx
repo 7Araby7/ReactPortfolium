@@ -1,5 +1,5 @@
 import './style.css'; // CSS específico para o componente Work
-import ProjectCard from '../ProjectCard';
+import ProjectCard from './ProjectCard';
 
 const Projects = () => (
   <section className="section" id="projects">

@@ -10,7 +10,7 @@ const HeaderText = () => {
       </Styled.Paragraph>
       <Styled.NameContainer>
         {name.split('').map((char, idx) => (
-          <Styled.Letter key={idx} index={idx}>
+          <Styled.Letter key={idx} $index={idx}>
             <b>{char}</b>
           </Styled.Letter>
         ))}

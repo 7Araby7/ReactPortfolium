@@ -4,7 +4,7 @@ import styled, { keyframes, css } from 'styled-components';
 const apearTheme = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-800px);
+    transform: translateY(-50vh);
   }
   to {
     opacity: 1;
@@ -17,10 +17,10 @@ const changeTheme = keyframes`
     transform: translateY(0);
   }
   20% {
-    transform: translateY(40px);
+    transform: translateY(4vh);
   }
   50% {
-    transform: translateY(-300px);
+    transform: translateY(-30vh);
   }
 `;
 
@@ -34,18 +34,11 @@ export const ThemeSwitcher = styled.div`
   gap: 1vh;
   z-index: 10;
 
-  ${({ animate }) =>
-    animate &&
+  ${({ $animate }) =>
+    $animate &&
     css`
       animation: ${changeTheme} 1000ms forwards;
-    `}/*   &.moon {
-    button {
-      left: -5px;
-      padding: 18px;
-      background-color: transparent;
-      box-shadow: -10px 3px 1px 9px var(--opposite);
-    }
-  } */
+    `}
 `;
 
 export const Button = styled.button`
@@ -53,12 +46,18 @@ export const Button = styled.button`
   left: -2.9vh;
   top: 8vh;
   position: absolute;
-  padding: 3vh;
+  padding: 0;
   z-index: 2;
   border-radius: 50%;
   animation: ${apearTheme} 3000ms forwards;
   background-color: var(--opposite);
-  filter: drop-shadow(0 0 20px var(--opposite));
+  filter: drop-shadow(0 0 2vh var(--opposite));
+  overflow: hidden;
+  width: 6vh;
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Line = styled.div`
@@ -70,29 +69,12 @@ export const Line = styled.div`
   animation: ${apearTheme} 3000ms forwards;
 `;
 
-/* export const Hole = styled.div`
-  position: fixed;
-  border-radius: 50%;
-  background-color: var(--primary);
-  box-shadow: inset 5px 0px 10px rgba(0, 0, 0, 0.562);
-  ${({ variant }) =>
-    variant === 1 &&
-    css`
-      left: 10px;
-      top: 15%;
-      padding: 12px;
-    `}
-  ${({ variant }) =>
-    variant === 2 &&
-    css`
-      right: 10px;
-      bottom: 25%;
-      padding: 5px;
-    `}
-  ${({ isMoon }) =>
-    !isMoon &&
+export const Icon = styled.svg`
+  width: 4vh;
+  height: 4vh;
+  ${({ $isMoon }) =>
+    !$isMoon &&
     css`
       display: none;
     `}
 `;
- */

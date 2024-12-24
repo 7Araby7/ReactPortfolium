@@ -57,8 +57,8 @@ export const Letter = styled.h1`
   user-select: none;
   animation: ${lighting} 1.4s alternate infinite;
 
-  ${({ index }) => css`
-    animation-delay: ${(index - 1) * 0.1}s;
+  ${({ $index }) => css`
+    animation-delay: ${($index - 1) * 0.1}s;
   `}
 
   /* &:nth-child(8) {
@@ -66,8 +66,8 @@ export const Letter = styled.h1`
     display: inline-block;
   } */
 
-  ${({ index }) =>
-    index === 7 &&
+  ${({ $index }) =>
+    $index === 7 &&
     css`
       width: 0.5em;
       display: inline-block;

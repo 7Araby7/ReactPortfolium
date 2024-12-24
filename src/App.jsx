@@ -1,60 +1,89 @@
-import './App.css';
 import { useEffect, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 
+import { lightTheme, darkTheme, colorTheme } from './theme';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import GlobalStyle from './GlobalStyle';
 
 function App() {
-  const [color, setColor] = useState('red');
+  const [colors, setColors] = useState();
   const [dark, setDark] = useState(true);
-  const theme = dark ? 'dark' : 'light';
+  const [userThemePreference, setUserThemePreference] = useState(null);
 
-  const handleColor = (color) => {
-    setColor(color);
+  const theme = dark ? darkTheme : lightTheme;
+  const color = colorTheme(colors);
+
+  const initializeColor = () => {
+    const savedColorPreference = localStorage.getItem('colorPreference');
+    if (savedColorPreference !== null) {
+      setColors(savedColorPreference);
+    } else {
+      setColors('purple');
+    }
+  };
+
+  const initializeTheme = () => {
+    const savedThemePreference = localStorage.getItem('themePreference');
+    if (savedThemePreference !== null) {
+      const isDarkTheme = savedThemePreference === 'dark';
+      setUserThemePreference(isDarkTheme);
+      setDark(isDarkTheme);
+    } else {
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setDark(preferredTheme);
+    }
+  };
+  useEffect(() => {
+    initializeColor();
+    initializeTheme();
+
+    const themeListener = (e) => {
+      if (userThemePreference === null) {
+        setDark(e.matches);
+      }
+    };
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addEventListener('change', themeListener);
+
+    return () => {
+      mediaQuery.removeEventListener('change', themeListener);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleColors = (colors) => {
+    setColors(colors);
+
+    localStorage.setItem('colorPreference', colors);
   };
 
   const handleThemeToggle = () => {
-    setDark(!dark);
+    const newTheme = !dark;
+
+    setUserThemePreference(newTheme);
+    setDark(newTheme);
+
+    localStorage.setItem('themePreference', newTheme ? 'dark' : 'light');
   };
 
-  useEffect(() => {
-    /*     const cursor = document.querySelector('.cursor');
-
-    const handleMouseMove = (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      cursor.style.top = `${y}px`;
-      cursor.style.left = `${x}px`;
-      cursor.style.display = 'block';
-    };
-
-    const handleMouseOut = () => {
-      cursor.style.display = 'none';
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseout', handleMouseOut);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseout', handleMouseOut);
-    }; */
-  }, []);
-
   return (
-    <div className={`container ${theme}-theme`} id={`color-${color}`}>
-      {/* <div className="cursor"></div> */}
-      <NavBar />
-      <Header handleColor={handleColor} handleThemeToggle={handleThemeToggle} />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider theme={{ ...theme, color }}>
+      <GlobalStyle />
+      <div className="container">
+        <NavBar />
+        <Header handleColor={handleColors} handleThemeToggle={handleThemeToggle} dark={dark} />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
