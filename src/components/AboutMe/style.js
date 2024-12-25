@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { FiMousePointer } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 // Container do AboutMe
 export const AboutMeContainer = styled.section`
@@ -53,21 +55,26 @@ export const Description = styled.div`
 `;
 
 // Card com a Imagem
-export const Card = styled.div`
+export const TiltCardWrapper = styled(motion.div)`
   position: relative;
-  width: 250px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  height: 28rem;
+  width: 18rem;
+  border-radius: 1rem;
+  background: var(--secondary);
+  box-shadow: 0px 0px 10px var(--accent);
+  transform-style: preserve-3d;
+`;
 
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
+export const InnerCard = styled.div`
+  overflow: hidden;
+  position: absolute;
+  inset: 1rem;
+  display: grid;
+  place-content: center;
+  border-radius: 1rem;
+  transform: translateZ(75px);
+  box-shadow: 0px 0px 10px var(--accent);
+  transform-style: preserve-3d;
 
   img {
     width: 100%;
@@ -75,26 +82,20 @@ export const Card = styled.div`
     object-fit: cover;
     transition: transform 0.4s ease;
   }
+`;
 
-  &:hover img {
-    transform: scale(1.1);
-  }
+export const MouseIcon = styled(FiMousePointer)`
+  transform: translateZ(75px);
+  font-size: 2.25rem;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover::after {
-    opacity: 1;
-  }
+export const HoverText = styled.p`
+  transform: translateZ(50px);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
 `;
 
 // Botão de Download (opcional)

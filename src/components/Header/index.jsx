@@ -10,7 +10,7 @@ import ThemeSwitcher from './ThemeSwitcher/index.jsx';
 const Header = ({ handleColor, handleThemeToggle, dark }) => {
   return (
     <Styled.Header id="home">
-      <Lights zIndex={0} lightAmount={30} />
+      <Lights zIndex={0} lightAmount={80} />
       <Styled.HeaderContent>
         <HeaderText />
         <SocialIcon />
