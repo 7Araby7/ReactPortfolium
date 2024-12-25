@@ -2,8 +2,8 @@ import P from 'prop-types';
 import { useEffect, useState } from 'react';
 
 import * as Styled from './style';
-import MoonIcon from '../../../assets/MoonIcon';
-import SunIcon from '../../../assets/SunIcon';
+import MoonIcon from '../../../assets/svg/MoonIcon';
+import SunIcon from '../../../assets/svg/SunIcon';
 
 const ThemeSwitcher = ({ handleThemeToggle, dark }) => {
   const [isMoon, setisMoon] = useState(!dark);

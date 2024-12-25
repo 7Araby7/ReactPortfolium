@@ -1,28 +1,29 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { lightTheme, darkTheme, colorTheme } from './theme';
+import { lightTheme, darkTheme, colorTheme } from './styles/theme';
+import GlobalStyle from './styles/globalStyle';
+//
 import NavBar from './components/NavBar';
 import Header from './components/Header';
-import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import GlobalStyle from './GlobalStyle';
 
 function App() {
   const [colors, setColors] = useState();
   const [dark, setDark] = useState(true);
-  const [userThemePreference, setUserThemePreference] = useState(null);
+  const [userHasThemePreference, setUserHasThemePreference] = useState(false);
 
-  const userThemePreferenceRef = useRef(null);
+  const userHasThemePreferenceRef = useRef(false);
 
   const theme = dark ? darkTheme : lightTheme;
   const color = colorTheme(colors);
 
   useEffect(() => {
-    userThemePreferenceRef.current = userThemePreference;
-  }, [userThemePreference]);
+    userHasThemePreferenceRef.current = userHasThemePreference;
+  }, [userHasThemePreference]);
 
   const initializePreferences = () => {
     const savedColorPreference = localStorage.getItem('colorPreference');
@@ -34,7 +35,7 @@ function App() {
 
     const savedThemePreference = localStorage.getItem('themePreference');
     if (savedThemePreference) {
-      setUserThemePreference(savedThemePreference === 'dark');
+      setUserHasThemePreference(true);
       setDark(savedThemePreference === 'dark');
     } else {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -44,7 +45,7 @@ function App() {
 
   const addThemeListener = useCallback(() => {
     const themeListener = (e) => {
-      if (userThemePreferenceRef.current === null) {
+      if (!userHasThemePreferenceRef.current) {
         setDark(e.matches);
       }
     };
@@ -71,7 +72,7 @@ function App() {
 
   const handleThemeToggle = () => {
     const newTheme = !dark;
-    setUserThemePreference(newTheme);
+    setUserHasThemePreference(true);
     setDark(newTheme);
     localStorage.setItem('themePreference', newTheme ? 'dark' : 'light');
   };
@@ -79,14 +80,12 @@ function App() {
   return (
     <ThemeProvider theme={{ ...theme, color }}>
       <GlobalStyle />
-      <div className="container">
-        <NavBar />
-        <Header handleColor={handleColors} handleThemeToggle={handleThemeToggle} dark={dark} />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-      </div>
+      <NavBar />
+      <Header handleColor={handleColors} handleThemeToggle={handleThemeToggle} dark={dark} />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </ThemeProvider>
   );
 }

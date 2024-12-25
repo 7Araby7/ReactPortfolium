@@ -1,6 +1,6 @@
 import * as Styled from './style';
-import LinkedinIcon from '../../../assets/LinkedinIcon.jsx';
-import GithubIcon from '../../../assets/GithubIcon.jsx';
+import LinkedinIcon from '../../../assets/svg/LinkedinIcon.jsx';
+import GithubIcon from '../../../assets/svg/GithubIcon.jsx';
 
 const SocialIcon = () => {
   return (

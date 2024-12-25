@@ -15,7 +15,6 @@ export const darkTheme = {
   nav: '#242424d3',
 };
 
-// Função que retorna o tema de cor de destaque
 export const colorTheme = (color) => {
   let accent;
 
