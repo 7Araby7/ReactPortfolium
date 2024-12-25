@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { lightTheme, darkTheme, colorTheme } from './theme';
@@ -15,35 +15,36 @@ function App() {
   const [dark, setDark] = useState(true);
   const [userThemePreference, setUserThemePreference] = useState(null);
 
+  const userThemePreferenceRef = useRef(null);
+
   const theme = dark ? darkTheme : lightTheme;
   const color = colorTheme(colors);
 
-  const initializeColor = () => {
+  useEffect(() => {
+    userThemePreferenceRef.current = userThemePreference;
+  }, [userThemePreference]);
+
+  const initializePreferences = () => {
     const savedColorPreference = localStorage.getItem('colorPreference');
-    if (savedColorPreference !== null) {
+    if (savedColorPreference) {
       setColors(savedColorPreference);
     } else {
       setColors('purple');
     }
-  };
 
-  const initializeTheme = () => {
     const savedThemePreference = localStorage.getItem('themePreference');
-    if (savedThemePreference !== null) {
-      const isDarkTheme = savedThemePreference === 'dark';
-      setUserThemePreference(isDarkTheme);
-      setDark(isDarkTheme);
+    if (savedThemePreference) {
+      setUserThemePreference(savedThemePreference === 'dark');
+      setDark(savedThemePreference === 'dark');
     } else {
-      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setDark(preferredTheme);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setDark(prefersDark);
     }
   };
-  useEffect(() => {
-    initializeColor();
-    initializeTheme();
 
+  const addThemeListener = useCallback(() => {
     const themeListener = (e) => {
-      if (userThemePreference === null) {
+      if (userThemePreferenceRef.current === null) {
         setDark(e.matches);
       }
     };
@@ -54,21 +55,24 @@ function App() {
     return () => {
       mediaQuery.removeEventListener('change', themeListener);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    initializePreferences();
+    const removeListener = addThemeListener();
+
+    return removeListener;
+  }, [addThemeListener]);
 
   const handleColors = (colors) => {
     setColors(colors);
-
     localStorage.setItem('colorPreference', colors);
   };
 
   const handleThemeToggle = () => {
     const newTheme = !dark;
-
     setUserThemePreference(newTheme);
     setDark(newTheme);
-
     localStorage.setItem('themePreference', newTheme ? 'dark' : 'light');
   };
 
