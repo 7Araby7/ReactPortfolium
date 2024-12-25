@@ -20,31 +20,31 @@ export const colorTheme = (color) => {
 
   switch (color) {
     case 'red':
-      accent = '#ff1313e5';
+      accent = '#ff1313';
       break;
     case 'orange':
-      accent = '#ff8c13e5';
+      accent = '#ff8c13';
       break;
     case 'yellow':
-      accent = '#fffa13e5';
+      accent = '#fffa13';
       break;
     case 'green':
-      accent = '#1bff13e5';
+      accent = '#1bff13';
       break;
     case 'teal':
-      accent = '#13ffe5e5';
+      accent = '#13ffe5';
       break;
     case 'blue':
-      accent = '#13d0ffe5';
+      accent = '#13d0ff';
       break;
     case 'purple':
-      accent = '#a313ffe5';
+      accent = '#a313ff';
       break;
     case 'pink':
-      accent = '#ff13cfe5';
+      accent = '#ff13cf';
       break;
     case 'magenta':
-      accent = '#ff13ffe5';
+      accent = '#ff13ff';
       break;
     case 'themeOposite':
       accent = 'var(--opposite)';

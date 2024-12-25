@@ -1,36 +1,36 @@
-import './style.css';
+import * as Styled from './style';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <ul className="navbar-list">
+    <Styled.Navbar>
+      <Styled.NavbarList>
         <li>
-          <a href="#home" className="navbar-link">
+          <Styled.NavbarLink href="#home">
             <b>Home</b>
-          </a>
+          </Styled.NavbarLink>
         </li>
         <li>
-          <a href="#aboutMe" className="navbar-link">
+          <Styled.NavbarLink href="#aboutMe">
             <b>About Me</b>
-          </a>
+          </Styled.NavbarLink>
         </li>
         <li>
-          <a href="#skills" className="navbar-link">
+          <Styled.NavbarLink href="#skills">
             <b>Skills</b>
-          </a>
+          </Styled.NavbarLink>
         </li>
         <li>
-          <a href="#projects" className="navbar-link">
+          <Styled.NavbarLink href="#projects">
             <b>Projects</b>
-          </a>
+          </Styled.NavbarLink>
         </li>
         <li>
-          <a href="#contact" className="navbar-link">
+          <Styled.NavbarLink href="#contact">
             <b>Contact</b>
-          </a>
+          </Styled.NavbarLink>
         </li>
-      </ul>
-    </nav>
+      </Styled.NavbarList>
+    </Styled.Navbar>
   );
 };
 

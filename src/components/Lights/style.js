@@ -32,7 +32,8 @@ export const Light = styled.div`
 `;
 
 export const LightsContainer = styled.div`
+  z-index: ${(props) => props.$zIndex || 0};
   position: absolute;
-  width: 100%;
+  width: 98%;
   height: 100%;
 `;
