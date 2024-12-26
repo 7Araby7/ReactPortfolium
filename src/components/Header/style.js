@@ -20,8 +20,8 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: radial-gradient(ellipse 60% 46% at top, var(--accent) 0%, var(--primary) 90%);
+  min-height: 110vh;
+  background: radial-gradient(ellipse 60% 46% at top, var(--light-accent) 0%, var(--primary) 90%);
   text-align: center;
   color: var(--text);
 `;

@@ -53,6 +53,8 @@ export const colorTheme = (color) => {
 
   return {
     accent,
+    lightAccent: accent + '99',
+    lightterAccent: accent + '50',
     neonGlow: `0 0 30px ${accent}`,
   };
 };

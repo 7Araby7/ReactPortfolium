@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FiMousePointer } from 'react-icons/fi';
+/* import { FiMousePointer } from 'react-icons/fi'; */
 import { motion } from 'framer-motion';
 
 // Container do AboutMe
@@ -23,7 +23,7 @@ export const AboutMeContainer = styled.section`
 export const Title = styled.h1`
   font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(0deg, var(--accent) 30%, var(--text));
+  background: linear-gradient(45deg, var(--accent) 20%, var(--text));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -40,7 +40,7 @@ export const Title = styled.h1`
 
 // Container da Descrição
 export const Description = styled.div`
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Exo 2';
   color: var(--text);
   line-height: 1.6;
@@ -52,6 +52,10 @@ export const Description = styled.div`
     text-align: center;
     max-width: 100%;
   }
+`;
+
+export const HoverText = styled.p`
+  font-family: 'Eco Coding WGL4 W01 Regular';
 `;
 
 // Card com a Imagem
@@ -73,7 +77,6 @@ export const InnerCard = styled.div`
   place-content: center;
   border-radius: 1rem;
   transform: translateZ(75px);
-  box-shadow: 0px 0px 10px var(--accent);
   transform-style: preserve-3d;
 
   img {
@@ -82,20 +85,6 @@ export const InnerCard = styled.div`
     object-fit: cover;
     transition: transform 0.4s ease;
   }
-`;
-
-export const MouseIcon = styled(FiMousePointer)`
-  transform: translateZ(75px);
-  font-size: 2.25rem;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-export const HoverText = styled.p`
-  transform: translateZ(50px);
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
 `;
 
 // Botão de Download (opcional)

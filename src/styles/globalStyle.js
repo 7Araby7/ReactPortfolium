@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
     --opposite: ${(props) => props.theme.opposite};
     --nav: ${(props) => props.theme.nav};
     --accent: ${(props) => props.theme.color.accent};
+    --light-accent: ${(props) => props.theme.color.lightAccent};
+    --lightter-accent: ${(props) => props.theme.color.lightterAccent};
     --neon-glow: ${(props) => props.theme.color.neonGlow};
   }
 

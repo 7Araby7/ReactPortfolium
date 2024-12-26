@@ -23,9 +23,9 @@ export const Container = styled.div`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 2.5vh;
+  font-size: 1.8vh;
   position: relative;
-  font-family: 'Exo 2';
+  font-family: 'Eco Coding WGL4 W01 Bold';
   margin: 0.3vh;
   color: var(--accent);
   pointer-events: none;

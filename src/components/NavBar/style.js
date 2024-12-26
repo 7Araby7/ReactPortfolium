@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.nav`
+  font-family: 'Eco Coding WGL4 W01 Regular';
   position: fixed;
   left: 0;
   top: 0;

@@ -1,9 +1,8 @@
-import { useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 import { useRef } from 'react';
+import { useMotionValue, useSpring, useTransform, useMotionTemplate } from 'framer-motion';
 
 import * as Styled from './style';
 import profileImage from '../../assets/png/profile.png';
-/* import profileImage from '../../assets/png/profile.png'; */
 import resume from '../../assets/pdf/resume.pdf';
 import Lights from '../Lights';
 
@@ -21,8 +20,12 @@ const AboutMe = () => {
 
   const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
+  const ySpringShadow = useTransform(ySpring, (latestValue) => -latestValue * 3);
+  const xSpringShadow = useTransform(xSpring, (latestValue) => latestValue * 3);
+  const boxShadow = useMotionTemplate`${ySpringShadow}px ${xSpringShadow}px 200px var(--lightter-accent)`;
+
   const handleMouseMove = (e) => {
-    if (!ref.current) return [0, 0];
+    if (!ref.current) return;
 
     const rect = ref.current.getBoundingClientRect();
 
@@ -46,15 +49,15 @@ const AboutMe = () => {
 
   return (
     <Styled.AboutMeContainer id="aboutMe">
-      <Lights zIndex={-1} lightAmount={50} />
+      <Lights zIndex={-1} lightAmount={80} />
       <div>
         <Styled.Title>About Me</Styled.Title>
         <Styled.Description>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, eveniet nesciunt cumque minima qui nisi
+          <Styled.HoverText>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, eveniet nesciunt cumque minima qui nisi
             illo quaerat voluptas repudiandae sequi earum debitis dolore autem quis optio, dolores, ad aspernatur
             molestiae?
-          </p>
+          </Styled.HoverText>
           <Styled.Button href={resume} download="Gabriel_Resume">
             Resume
           </Styled.Button>
@@ -66,6 +69,7 @@ const AboutMe = () => {
         onMouseLeave={handleMouseLeave}
         style={{
           transform,
+          boxShadow,
         }}
       >
         <Styled.InnerCard>

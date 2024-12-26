@@ -6,7 +6,7 @@ const HeaderText = () => {
   return (
     <Styled.Container>
       <Styled.Paragraph>
-        <b>Hey there, my name is</b>
+        <b>hi there, my name is</b>
       </Styled.Paragraph>
       <Styled.NameContainer>
         {name.split('').map((char, idx) => (
@@ -16,7 +16,7 @@ const HeaderText = () => {
         ))}
       </Styled.NameContainer>
       <Styled.Paragraph>
-        <b>And I bring designs to life on the web.</b>
+        <b>and I bring designs to life on the web.</b>
       </Styled.Paragraph>
     </Styled.Container>
   );
