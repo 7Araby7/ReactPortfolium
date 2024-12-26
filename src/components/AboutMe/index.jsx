@@ -20,12 +20,12 @@ const AboutMe = () => {
 
   const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
-  const ySpringShadow = useTransform(ySpring, (latestValue) => -latestValue * 3);
-  const xSpringShadow = useTransform(xSpring, (latestValue) => latestValue * 3);
+  const ySpringShadow = useTransform(ySpring, (latestValue) => -latestValue);
+  const xSpringShadow = useTransform(xSpring, (latestValue) => latestValue);
   const boxShadow = useMotionTemplate`${ySpringShadow}px ${xSpringShadow}px 200px var(--lightter-accent)`;
 
   const handleMouseMove = (e) => {
-    if (!ref.current) return;
+    if (!ref.current) return [0, 0];
 
     const rect = ref.current.getBoundingClientRect();
 
