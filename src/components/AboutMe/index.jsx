@@ -1,15 +1,18 @@
 import { useRef } from 'react';
 import { useMotionValue, useSpring, useTransform, useMotionTemplate } from 'framer-motion';
+import P from 'prop-types';
 
 import * as Styled from './style';
 import profileImage from '../../assets/png/profile.png';
 import resume from '../../assets/pdf/resume.pdf';
-import Lights from '../Lights';
 
 const ROTATION_RANGE = 32.5;
 const HALF_ROTATION_RANGE = 32.5 / 2;
 
-const AboutMe = () => {
+const AboutMe = ({ dark }) => {
+  const shadow = dark ? '200px' : '40px';
+  console.log(shadow);
+
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -20,9 +23,9 @@ const AboutMe = () => {
 
   const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
-  const ySpringShadow = useTransform(ySpring, (latestValue) => -latestValue);
-  const xSpringShadow = useTransform(xSpring, (latestValue) => latestValue);
-  const boxShadow = useMotionTemplate`${ySpringShadow}px ${xSpringShadow}px 200px var(--lightter-accent)`;
+  const ySpringShadow = useTransform(ySpring, (latestValue) => -latestValue * 3);
+  const xSpringShadow = useTransform(xSpring, (latestValue) => latestValue * 3);
+  const boxShadow = useMotionTemplate`${ySpringShadow}px ${xSpringShadow}px ${shadow} var(--lightter-accent)`;
 
   const handleMouseMove = (e) => {
     if (!ref.current) return [0, 0];
@@ -49,7 +52,6 @@ const AboutMe = () => {
 
   return (
     <Styled.AboutMeContainer id="aboutMe">
-      <Lights zIndex={-1} lightAmount={80} />
       <div>
         <Styled.Title>About Me</Styled.Title>
         <Styled.Description>
@@ -59,7 +61,7 @@ const AboutMe = () => {
             molestiae?
           </Styled.HoverText>
           <Styled.Button href={resume} download="Gabriel_Resume">
-            Resume
+            <b>Resume</b>
           </Styled.Button>
         </Styled.Description>
       </div>
@@ -78,6 +80,10 @@ const AboutMe = () => {
       </Styled.TiltCardWrapper>
     </Styled.AboutMeContainer>
   );
+};
+
+AboutMe.propTypes = {
+  dark: P.bool.isRequired,
 };
 
 export default AboutMe;

@@ -1,4 +1,6 @@
 // themes.js
+let isDark;
+
 export const lightTheme = {
   primary: '#f5f5f5',
   secondary: '#d3d3d3',
@@ -15,8 +17,9 @@ export const darkTheme = {
   nav: '#242424d3',
 };
 
-export const colorTheme = (color) => {
+export const colorTheme = (color, dark) => {
   let accent;
+  isDark = dark;
 
   switch (color) {
     case 'red':
@@ -47,14 +50,14 @@ export const colorTheme = (color) => {
       accent = '#ff13ff';
       break;
     case 'themeOposite':
-      accent = 'var(--opposite)';
+      dark ? (accent = '#f5f5f5') : (accent = '#242424');
       break;
   }
 
   return {
     accent,
-    lightAccent: accent + '99',
-    lightterAccent: accent + '50',
+    lightAccent: isDark ? accent + '99' : accent,
+    lightterAccent: isDark ? accent + '50' : accent + '99',
     neonGlow: `0 0 30px ${accent}`,
   };
 };

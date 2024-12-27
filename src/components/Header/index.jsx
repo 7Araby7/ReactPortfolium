@@ -1,7 +1,6 @@
 import P from 'prop-types';
 
 import * as Styled from './style';
-import Lights from '../Lights/index.jsx';
 import HeaderText from './HeaderText/index.jsx';
 import SocialIcon from './SocialIcon/index.jsx';
 import ColorPicker from './ColorPicker/index.jsx';
@@ -10,7 +9,6 @@ import ThemeSwitcher from './ThemeSwitcher/index.jsx';
 const Header = ({ handleColor, handleThemeToggle, dark }) => {
   return (
     <Styled.Header id="home">
-      <Lights zIndex={0} lightAmount={80} />
       <Styled.HeaderContent>
         <HeaderText />
         <SocialIcon />

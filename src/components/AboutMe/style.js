@@ -23,10 +23,8 @@ export const AboutMeContainer = styled.section`
 export const Title = styled.h1`
   font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(45deg, var(--accent) 20%, var(--text));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent);
+  margin-top: 0;
   margin-bottom: 2rem;
   text-align: left;
   flex: 1;
@@ -41,7 +39,6 @@ export const Title = styled.h1`
 // Container da Descrição
 export const Description = styled.div`
   font-size: 1rem;
-  font-family: 'Exo 2';
   color: var(--text);
   line-height: 1.6;
   max-width: 600px;
@@ -78,6 +75,7 @@ export const InnerCard = styled.div`
   border-radius: 1rem;
   transform: translateZ(75px);
   transform-style: preserve-3d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.53);
 
   img {
     width: 100%;
@@ -101,7 +99,7 @@ export const Button = styled.button`
   transition: all 0.5s ease;
 
   &:hover {
-    color: var(--text);
+    color: var(--primary);
   }
 
   &::before {

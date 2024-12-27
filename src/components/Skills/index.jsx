@@ -1,18 +1,20 @@
-import './style.css'; // CSS específico para o componente Skills
+import * as Styled from './style';
 
 const Skills = () => (
-  <section className="section" id="skills">
-    <h2>Skills & Expertise</h2>
-    <div className="skills">
-      {['HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 'Python', 'UI/UX Design', 'Responsive Design', 'Git'].map(
-        (skill, index) => (
-          <span key={index} className="skill-tag">
-            {skill}
-          </span>
-        ),
-      )}
-    </div>
-  </section>
+  <>
+    <Styled.SkillsSection id="skills">
+      <Styled.SkillsTitle>Skills</Styled.SkillsTitle>
+      <Styled.SkillsList>
+        {['HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 'Python', 'UI/UX Design', 'Responsive Design', 'Git'].map(
+          (skill, index) => (
+            <Styled.SkillTag key={index} $index={index} href="https://google.com">
+              {skill}
+            </Styled.SkillTag>
+          ),
+        )}
+      </Styled.SkillsList>
+    </Styled.SkillsSection>
+  </>
 );
 
 export default Skills;

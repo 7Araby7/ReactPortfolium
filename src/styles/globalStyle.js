@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--primary);
     color: var(--text);
     font-weight: 400;
-    font-family: 'Orbitron', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Encode Sans SC','Atomic Age', 'Oi', 'Autour One', 'Orbitron', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
 
   .section {

@@ -3,11 +3,11 @@ import styled, { keyframes } from 'styled-components';
 const apearColors = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(-10vh) rotate(225deg);
+    transform: translateY(-15vh) rotate(225deg);
   }
   20% {
     opacity: 0;
-    transform: translateY(-10vh) rotate(225deg);
+    transform: translateY(-15vh) rotate(225deg);
   }
   100% {
     opacity: 1;

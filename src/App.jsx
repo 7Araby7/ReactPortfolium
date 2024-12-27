@@ -20,7 +20,7 @@ function App() {
   const userHasThemePreferenceRef = useRef(false);
 
   const theme = dark ? darkTheme : lightTheme;
-  const color = colorTheme(colors);
+  const color = colorTheme(colors, dark);
 
   useEffect(() => {
     userHasThemePreferenceRef.current = userHasThemePreference;
@@ -63,6 +63,10 @@ function App() {
     initializePreferences();
     const removeListener = addThemeListener();
 
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 30);
+
     return removeListener;
   }, [addThemeListener]);
 
@@ -83,7 +87,7 @@ function App() {
       <GlobalStyle />
       <NavBar />
       <Header handleColor={handleColors} handleThemeToggle={handleThemeToggle} dark={dark} />
-      <AboutMe />
+      <AboutMe dark={dark} />
       <Skills />
       <Projects />
       <Contact />
