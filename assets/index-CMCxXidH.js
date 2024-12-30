@@ -371,6 +371,8 @@ Error generating stack: `+c.message+`
   margin-bottom: 2rem;
   font-weight: 700;
 `,gC=re.div`
+  margin-left: 7%;
+  margin-right: 7%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
