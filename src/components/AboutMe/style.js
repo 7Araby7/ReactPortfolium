@@ -11,7 +11,7 @@ export const AboutMeContainer = styled.section`
   gap: 4rem;
   padding: 5vh 10vw;
   color: var(--text);
-  min-height: 80vh;
+  min-height: 100vh;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -23,12 +23,15 @@ export const AboutMeContainer = styled.section`
 export const Title = styled.h1`
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text);
   margin-top: 0;
   margin-bottom: 2rem;
   text-align: left;
   flex: 1;
-  padding-left: 2rem;
+
+  hr {
+    width: 100%;
+  }
 
   @media (max-width: 768px) {
     text-align: center;
@@ -38,7 +41,6 @@ export const Title = styled.h1`
 
 // Container da Descrição
 export const Description = styled.div`
-  font-size: 1rem;
   color: var(--text);
   line-height: 1.6;
   max-width: 600px;
@@ -80,13 +82,14 @@ export const InnerCard = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.4s ease;
   }
 `;
 
 // Botão de Download (opcional)
 export const Button = styled.button`
+  font-family: 'Eco Coding WGL4 W01 Bold';
   border: solid 0.05rem var(--accent);
   background: none;
   color: var(--accent);
@@ -95,8 +98,9 @@ export const Button = styled.button`
   margin-top: 2rem;
   border-radius: 0.4rem;
   transition: ball 0.5s;
+  width: 150px;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.25s ease;
 
   &:hover {
     color: var(--primary);
@@ -113,7 +117,7 @@ export const Button = styled.button`
     z-index: -1;
     border-radius: 0 0 50% 50%;
     height: 0%;
-    transition: all 0.5s ease;
+    transition: all 0.25s ease;
   }
 
   &:hover::before {

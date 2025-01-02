@@ -23,19 +23,35 @@ const GlobalStyle = createGlobalStyle`
   body {
     min-height: 100vh;
     width: 100%;
-    box-sizing: border-box;
-    margin: 0;
+    margin: 0 auto;
     background-color: var(--primary);
-    color: var(--text);
-    font-weight: 400;
     font-family: 'Encode Sans SC','Atomic Age', 'Oi', 'Autour One', 'Orbitron', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    hr {
+    width: 30%;
+    border: solid 1px var(--accent);
+
+      &:hover{
+      border: solid 1px var(--text);
+      }
+    }
+
+  }
+  p{
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
   }
 
   .section {
+    scroll-margin-bottom: 80px;
     min-height: 50vh;
     padding: 5rem 2rem;
     margin: 0 auto;
   }
+
 `;
 
 export default GlobalStyle;

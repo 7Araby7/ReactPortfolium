@@ -1,28 +1,30 @@
+import { useInView } from 'react-intersection-observer';
 import P from 'prop-types';
 
 import * as Styled from './style';
 import HeaderText from './HeaderText/index.jsx';
 import SocialIcon from './SocialIcon/index.jsx';
 import ColorPicker from './ColorPicker/index.jsx';
-import ThemeSwitcher from './ThemeSwitcher/index.jsx';
 
-const Header = ({ handleColor, handleThemeToggle, dark }) => {
+const Header = ({ handleColor }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Deixe como false para que a animação seja disparada várias vezes
+    threshold: 0.2, // Quando 20% da área do header estiver visível
+  });
+
   return (
-    <Styled.Header id="home">
+    <Styled.Header id="home" ref={ref}>
       <Styled.HeaderContent>
-        <HeaderText />
+        <HeaderText animate={inView} /> {/* Passe o inView diretamente */}
         <SocialIcon />
       </Styled.HeaderContent>
       <ColorPicker handleColor={handleColor} />
-      <ThemeSwitcher handleThemeToggle={handleThemeToggle} dark={dark} />
     </Styled.Header>
   );
 };
 
 Header.propTypes = {
   handleColor: P.func.isRequired,
-  handleThemeToggle: P.func.isRequired,
-  dark: P.bool.isRequired,
 };
 
 export default Header;

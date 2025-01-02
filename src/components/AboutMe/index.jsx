@@ -11,7 +11,6 @@ const HALF_ROTATION_RANGE = 32.5 / 2;
 
 const AboutMe = ({ dark }) => {
   const shadow = dark ? '200px' : '40px';
-  console.log(shadow);
 
   const ref = useRef(null);
 
@@ -53,7 +52,9 @@ const AboutMe = ({ dark }) => {
   return (
     <Styled.AboutMeContainer id="aboutMe">
       <div>
-        <Styled.Title>About Me</Styled.Title>
+        <Styled.Title>
+          About Me <hr />
+        </Styled.Title>
         <Styled.Description>
           <Styled.HoverText>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, eveniet nesciunt cumque minima qui nisi
@@ -61,7 +62,7 @@ const AboutMe = ({ dark }) => {
             molestiae?
           </Styled.HoverText>
           <Styled.Button href={resume} download="Gabriel_Resume">
-            <b>Resume</b>
+            Resume
           </Styled.Button>
         </Styled.Description>
       </div>

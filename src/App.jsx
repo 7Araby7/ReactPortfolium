@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 
 import { lightTheme, darkTheme, colorTheme } from './styles/theme';
 import GlobalStyle from './styles/globalStyle';
-//
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Skills from './components/Skills';
@@ -11,16 +10,25 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AboutMe from './components/AboutMe';
+import ThemeSwitcher from './components/ThemeSwitcher';
+import MotionWrapper from './utils/MotionWrapper';
+import Map from './components/Map';
 
 function App() {
-  const [colors, setColors] = useState();
+  const [colorPicked, setColorPicked] = useState();
   const [dark, setDark] = useState(true);
   const [userHasThemePreference, setUserHasThemePreference] = useState(false);
 
   const userHasThemePreferenceRef = useRef(false);
 
   const theme = dark ? darkTheme : lightTheme;
-  const color = colorTheme(colors, dark);
+  const color = colorTheme(colorPicked, dark);
+
+  // Variants for animations
+  const fadeInVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  };
 
   useEffect(() => {
     userHasThemePreferenceRef.current = userHasThemePreference;
@@ -29,9 +37,9 @@ function App() {
   const initializePreferences = () => {
     const savedColorPreference = localStorage.getItem('colorPreference');
     if (savedColorPreference) {
-      setColors(savedColorPreference);
+      setColorPicked(savedColorPreference);
     } else {
-      setColors('purple');
+      setColorPicked('purple');
     }
 
     const savedThemePreference = localStorage.getItem('themePreference');
@@ -63,16 +71,16 @@ function App() {
     initializePreferences();
     const removeListener = addThemeListener();
 
-    setTimeout(() => {
+    /* setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 30);
+    }, 50); */
 
     return removeListener;
   }, [addThemeListener]);
 
-  const handleColors = (colors) => {
-    setColors(colors);
-    localStorage.setItem('colorPreference', colors);
+  const handleColorPicked = (colorPicked) => {
+    setColorPicked(colorPicked);
+    localStorage.setItem('colorPreference', colorPicked);
   };
 
   const handleThemeToggle = () => {
@@ -85,12 +93,27 @@ function App() {
   return (
     <ThemeProvider theme={{ ...theme, color }}>
       <GlobalStyle />
+      <ThemeSwitcher handleThemeToggle={handleThemeToggle} dark={dark} />
       <NavBar />
-      <Header handleColor={handleColors} handleThemeToggle={handleThemeToggle} dark={dark} />
-      <AboutMe dark={dark} />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Header handleColor={handleColorPicked} />
+
+      {/* Animated Components */}
+      <MotionWrapper threshold={0.4} variants={fadeInVariants}>
+        <AboutMe dark={dark} />
+      </MotionWrapper>
+      <MotionWrapper threshold={0.4} variants={fadeInVariants}>
+        <Map />
+      </MotionWrapper>
+      <MotionWrapper variants={fadeInVariants}>
+        <Projects />
+      </MotionWrapper>
+      <MotionWrapper threshold={0.4} variants={fadeInVariants}>
+        <Skills />
+      </MotionWrapper>
+      <MotionWrapper variants={fadeInVariants}>
+        <Contact />
+      </MotionWrapper>
+
       <Footer />
     </ThemeProvider>
   );

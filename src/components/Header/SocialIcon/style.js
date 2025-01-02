@@ -6,20 +6,19 @@ export const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  fill: var(--text);
   transition: all 0.3s;
 
   svg {
-    margin-inline-start: 1.2vh;
-    margin-top: 3.2vh;
+    margin-inline-start: 0.56rem;
+    margin-top: 1.55rem;
     display: flex;
     justify-content: center;
-    width: 5.5vh;
+    height: 2.7rem;
+    width: 2.7rem;
   }
 
   svg:hover {
     fill: var(--accent);
     transform: scale(1.1);
-    filter: drop-shadow(0 0 0.5vh var(--accent));
   }
 `;

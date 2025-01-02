@@ -19,7 +19,7 @@ export const SkillsSection = styled.section`
 export const SkillsTitle = styled.h1`
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--text);
   margin-top: 0;
   margin-bottom: 2rem;
   flex: 1;
@@ -41,7 +41,7 @@ export const SkillTag = styled.a`
   padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 25px;
+  border-radius: 10px;
   transition: all 0.3s ease;
   animation: ${floating} 2.5s alternate-reverse infinite;
   margin-bottom: 30px;

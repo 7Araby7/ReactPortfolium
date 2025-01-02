@@ -1,10 +1,12 @@
+import { motion } from 'framer-motion';
 import styled, { keyframes, css } from 'styled-components';
 
 // Animações
+
 const apearTheme = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-50vh);
+    transform: translateY(-25rem);
   }
   to {
     opacity: 1;
@@ -17,21 +19,21 @@ const changeTheme = keyframes`
     transform: translateY(0);
   }
   20% {
-    transform: translateY(4vh);
+    transform: translateY(2rem);
   }
   50% {
-    transform: translateY(-30vh);
+    transform: translateY(-15rem);
   }
 `;
 
 // Componentes Styled
-export const ThemeSwitcher = styled.div`
-  position: absolute;
-  top: 1.2vh;
-  left: 8vh;
+export const ThemeSwitcher = styled(motion.div)`
+  position: fixed;
+  top: 1rem;
+  left: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  gap: 0.5rem;
   z-index: 10;
 
   ${({ $animate }) =>
@@ -39,42 +41,43 @@ export const ThemeSwitcher = styled.div`
     css`
       animation: ${changeTheme} 1000ms forwards;
     `}
+
+  @media (max-width: 768px) {
+    left: auto;
+    right: 4rem;
+    top: 0.5rem;
+  }
 `;
 
 export const Button = styled.button`
   border: none;
-  left: -2.9vh;
-  top: 8vh;
+  left: -1.45rem;
+  top: 3.8rem;
   position: absolute;
   padding: 0;
   z-index: 2;
   border-radius: 50%;
   animation: ${apearTheme} 3000ms forwards;
   background-color: var(--opposite);
-  filter: drop-shadow(0 0 2vh var(--opposite));
+  filter: drop-shadow(0 0 1rem var(--opposite));
   overflow: hidden;
-  width: 6vh;
-  height: 6vh;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  svg {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
 `;
 
 export const Line = styled.div`
-  border: solid 0.3vh var(--opposite);
-  top: -5.8vh;
-  height: 13.5vh;
+  border: solid 0.1rem var(--opposite);
+  top: -2.9rem;
+  height: 6.75rem;
   position: absolute;
   z-index: 1;
   animation: ${apearTheme} 3000ms forwards;
-`;
-
-export const Icon = styled.svg`
-  width: 4vh;
-  height: 4vh;
-  ${({ $isMoon }) =>
-    !$isMoon &&
-    css`
-      display: none;
-    `}
 `;
