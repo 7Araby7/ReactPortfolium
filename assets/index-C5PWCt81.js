@@ -140,6 +140,7 @@ Error generating stack: `+d.message+`
       left: 0%;
       width: 100%;
       background: var(--nav);
+      backdrop-filter: blur(1.16rem);
       padding: 1rem 0;
       border-bottom: 0.174rem solid var(--accent);
     }
@@ -175,7 +176,7 @@ Error generating stack: `+d.message+`
       transform: scaleX(0.8);
     }
   }
-`,xE=()=>{const[t,r]=Y.useState(!0),[i,s]=Y.useState(!1),{scrollY:l}=U0();F0(l,"change",c=>{const h=l.getPrevious(),p=c>h?"down":"up";r(p==="up")});const f=()=>{s(!1)};return I.jsxs(wE,{initial:{y:0},animate:{y:t?0:"-100%"},transition:{type:"tween",duration:.3,delay:.3},isChecked:i,children:[I.jsx("label",{htmlFor:"toggle",children:"☰"}),I.jsx("input",{type:"checkbox",id:"toggle",checked:i,onChange:c=>s(c.target.checked)}),I.jsxs(SE,{children:[I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"home",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Home"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"aboutMe",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"About Me"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"projects",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Projects"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"skills",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Skills"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"contact",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Contact"})})})]})]})};var Lc=new Map,Ks=new WeakMap,Og=0,kE=void 0;function TE(t){return t?(Ks.has(t)||(Og+=1,Ks.set(t,Og.toString())),Ks.get(t)):"0"}function PE(t){return Object.keys(t).sort().filter(r=>t[r]!==void 0).map(r=>`${r}_${r==="root"?TE(t.root):t[r]}`).toString()}function EE(t){const r=PE(t);let i=Lc.get(r);if(!i){const s=new Map;let l;const f=new IntersectionObserver(c=>{c.forEach(h=>{var p;const m=h.isIntersecting&&l.some(g=>h.intersectionRatio>=g);t.trackVisibility&&typeof h.isVisible>"u"&&(h.isVisible=m),(p=s.get(h.target))==null||p.forEach(g=>{g(m,h)})})},t);l=f.thresholds||(Array.isArray(t.threshold)?t.threshold:[t.threshold||0]),i={id:r,observer:f,elements:s},Lc.set(r,i)}return i}function CE(t,r,i={},s=kE){if(typeof window.IntersectionObserver>"u"&&s!==void 0){const p=t.getBoundingClientRect();return r(s,{isIntersecting:s,target:t,intersectionRatio:typeof i.threshold=="number"?i.threshold:0,time:0,boundingClientRect:p,intersectionRect:p,rootBounds:p}),()=>{}}const{id:l,observer:f,elements:c}=EE(i),h=c.get(t)||[];return c.has(t)||c.set(t,h),h.push(r),f.observe(t),function(){h.splice(h.indexOf(r),1),h.length===0&&(c.delete(t),f.unobserve(t)),c.size===0&&(f.disconnect(),Lc.delete(l))}}function Y0({threshold:t,delay:r,trackVisibility:i,rootMargin:s,root:l,triggerOnce:f,skip:c,initialInView:h,fallbackInView:p,onChange:m}={}){var g;const[y,w]=Y.useState(null),S=Y.useRef(m),[k,P]=Y.useState({inView:!!h,entry:void 0});S.current=m,Y.useEffect(()=>{if(c||!y)return;let M;return M=CE(y,(b,N)=>{P({inView:b,entry:N}),S.current&&S.current(b,N),N.isIntersecting&&f&&M&&(M(),M=void 0)},{root:l,rootMargin:s,threshold:t,trackVisibility:i,delay:r},p),()=>{M&&M()}},[Array.isArray(t)?t.toString():t,y,l,s,f,c,i,p,r]);const _=(g=k.entry)==null?void 0:g.target,C=Y.useRef(void 0);!y&&_&&!f&&!c&&C.current!==_&&(C.current=_,P({inView:!!h,entry:void 0}));const L=[w,k.inView,k.entry];return L.ref=L[0],L.inView=L[1],L.entry=L[2],L}var _E=vo();const lt=Fg(_E),RE=ei`
+`,xE=()=>{const[t,r]=Y.useState(!0),[i,s]=Y.useState(!1),{scrollY:l}=U0();F0(l,"change",c=>{const h=l.getPrevious(),p=c>h?"down":"up";r(p==="up"),p==="down"&&setTimeout(()=>{s(!1)},500)});const f=()=>{s(!1)};return I.jsxs(wE,{initial:{y:0},animate:{y:t?0:"-700%"},transition:{type:"tween",duration:.3,delay:.3},isChecked:i,children:[I.jsx("label",{htmlFor:"toggle",children:"☰"}),I.jsx("input",{type:"checkbox",id:"toggle",checked:i,onChange:c=>s(c.target.checked)}),I.jsxs(SE,{children:[I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"home",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Home"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"aboutMe",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"About Me"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"projects",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Projects"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"skills",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Skills"})})}),I.jsx("li",{children:I.jsx(Wi.Link,{onClick:f,to:"contact",smooth:!0,offset:-100,duration:50,children:I.jsx(Gi,{children:"Contact"})})})]})]})};var Lc=new Map,Ks=new WeakMap,Og=0,kE=void 0;function TE(t){return t?(Ks.has(t)||(Og+=1,Ks.set(t,Og.toString())),Ks.get(t)):"0"}function PE(t){return Object.keys(t).sort().filter(r=>t[r]!==void 0).map(r=>`${r}_${r==="root"?TE(t.root):t[r]}`).toString()}function EE(t){const r=PE(t);let i=Lc.get(r);if(!i){const s=new Map;let l;const f=new IntersectionObserver(c=>{c.forEach(h=>{var p;const m=h.isIntersecting&&l.some(g=>h.intersectionRatio>=g);t.trackVisibility&&typeof h.isVisible>"u"&&(h.isVisible=m),(p=s.get(h.target))==null||p.forEach(g=>{g(m,h)})})},t);l=f.thresholds||(Array.isArray(t.threshold)?t.threshold:[t.threshold||0]),i={id:r,observer:f,elements:s},Lc.set(r,i)}return i}function CE(t,r,i={},s=kE){if(typeof window.IntersectionObserver>"u"&&s!==void 0){const p=t.getBoundingClientRect();return r(s,{isIntersecting:s,target:t,intersectionRatio:typeof i.threshold=="number"?i.threshold:0,time:0,boundingClientRect:p,intersectionRect:p,rootBounds:p}),()=>{}}const{id:l,observer:f,elements:c}=EE(i),h=c.get(t)||[];return c.has(t)||c.set(t,h),h.push(r),f.observe(t),function(){h.splice(h.indexOf(r),1),h.length===0&&(c.delete(t),f.unobserve(t)),c.size===0&&(f.disconnect(),Lc.delete(l))}}function Y0({threshold:t,delay:r,trackVisibility:i,rootMargin:s,root:l,triggerOnce:f,skip:c,initialInView:h,fallbackInView:p,onChange:m}={}){var g;const[y,w]=Y.useState(null),S=Y.useRef(m),[k,P]=Y.useState({inView:!!h,entry:void 0});S.current=m,Y.useEffect(()=>{if(c||!y)return;let M;return M=CE(y,(b,N)=>{P({inView:b,entry:N}),S.current&&S.current(b,N),N.isIntersecting&&f&&M&&(M(),M=void 0)},{root:l,rootMargin:s,threshold:t,trackVisibility:i,delay:r},p),()=>{M&&M()}},[Array.isArray(t)?t.toString():t,y,l,s,f,c,i,p,r]);const _=(g=k.entry)==null?void 0:g.target,C=Y.useRef(void 0);!y&&_&&!f&&!c&&C.current!==_&&(C.current=_,P({inView:!!h,entry:void 0}));const L=[w,k.inView,k.entry];return L.ref=L[0],L.inView=L[1],L.entry=L[2],L}var _E=vo();const lt=Fg(_E),RE=ei`
   from {
     opacity: 0;
     transform: translateY(10vh);
@@ -334,7 +335,7 @@ Error generating stack: `+d.message+`
   border-radius: 30rem 0rem 15rem 0rem;
   cursor: pointer;
   z-index: 2;
-  opacity: 1;
+  opacity: 0;
   animation: ${XE} 3000ms forwards;
   animation-delay: ${t=>`calc(0.15s * (${t.$index} - 1))`};
   left: ${t=>4.05-(t.$index-1)*.55}rem;
@@ -725,7 +726,7 @@ Error generating stack: `+d.message+`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.4s ease;
   }
 `,VC=de.button`
@@ -766,7 +767,7 @@ Error generating stack: `+d.message+`
 `,NC="/ReactPortfolium/assets/profile-DLNmNxe-.png",bC="/ReactPortfolium/assets/resume-BT5ZmDA1.pdf",bg=32.5,zg=32.5/2,ty=({dark:t})=>{const r=t?"200px":"40px",i=Y.useRef(null),s=ga(0),l=ga(0),f=og(s),c=og(l),h=tg`rotateX(${f}deg) rotateY(${c}deg)`,p=ng(c,S=>-S*3),m=ng(f,S=>S*3),g=tg`${p}px ${m}px ${r} var(--lightter-accent)`,y=S=>{if(!i.current)return[0,0];const k=i.current.getBoundingClientRect(),P=k.width,_=k.height,C=(S.clientX-k.left)*bg,M=((S.clientY-k.top)*bg/_-zg)*-1,b=C/P-zg;s.set(M),l.set(b)},w=()=>{s.set(0),l.set(0)};return I.jsxs(MC,{id:"aboutMe",children:[I.jsxs("div",{children:[I.jsxs(LC,{children:["About Me ",I.jsx("hr",{})]}),I.jsxs(OC,{children:[I.jsx(jC,{children:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, eveniet nesciunt cumque minima qui nisi illo quaerat voluptas repudiandae sequi earum debitis dolore autem quis optio, dolores, ad aspernatur molestiae?"}),I.jsx(VC,{href:bC,download:"Gabriel_Resume",children:"Resume"})]})]}),I.jsx(DC,{ref:i,onMouseMove:y,onMouseLeave:w,style:{transform:h,boxShadow:g},children:I.jsx(IC,{children:I.jsx("img",{src:NC,alt:"Profile"})})})]})};ty.propTypes={dark:lt.bool.isRequired};function zC(t){return dr({tag:"svg",attr:{fill:"currentColor",viewBox:"0 0 16 16"},child:[{tag:"path",attr:{d:"M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"},child:[]},{tag:"path",attr:{d:"M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"},child:[]}]})(t)}function FC(t){return dr({tag:"svg",attr:{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},child:[{tag:"path",attr:{d:"M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z"},child:[]},{tag:"path",attr:{d:"M6.343 17.657l-1.414 1.414"},child:[]},{tag:"path",attr:{d:"M6.343 6.343l-1.414 -1.414"},child:[]},{tag:"path",attr:{d:"M17.657 6.343l1.414 -1.414"},child:[]},{tag:"path",attr:{d:"M17.657 17.657l1.414 1.414"},child:[]},{tag:"path",attr:{d:"M4 12h-2"},child:[]},{tag:"path",attr:{d:"M12 4v-2"},child:[]},{tag:"path",attr:{d:"M20 12h2"},child:[]},{tag:"path",attr:{d:"M12 20v2"},child:[]}]})(t)}const ny=ei`
   from {
     opacity: 0;
-    transform: translateY(-50vh);
+    transform: translateY(-25rem);
   }
   to {
     opacity: 1;
@@ -777,18 +778,18 @@ Error generating stack: `+d.message+`
     transform: translateY(0);
   }
   20% {
-    transform: translateY(4vh);
+    transform: translateY(2rem);
   }
   50% {
-    transform: translateY(-30vh);
+    transform: translateY(-15rem);
   }
 `,$C=de(go.div)`
   position: fixed;
-  top: 2vh;
-  left: 8vh;
+  top: 1rem;
+  left: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  gap: 0.5rem;
   z-index: 10;
 
   ${({$animate:t})=>t&&ur`
@@ -797,35 +798,35 @@ Error generating stack: `+d.message+`
 
   @media (max-width: 768px) {
     left: auto;
-    right: 8vh;
-    top: 1vh;
+    right: 4rem;
+    top: 0.5rem;
   }
 `,HC=de.button`
   border: none;
-  left: -2.9vh;
-  top: 8vh;
+  left: -1.45rem;
+  top: 3.8rem;
   position: absolute;
   padding: 0;
   z-index: 2;
   border-radius: 50%;
   animation: ${ny} 3000ms forwards;
   background-color: var(--opposite);
-  filter: drop-shadow(0 0 2vh var(--opposite));
+  filter: drop-shadow(0 0 1rem var(--opposite));
   overflow: hidden;
-  width: 6vh;
-  height: 6vh;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
   svg {
-    height: 3.5vh;
-    width: 3.5vh;
+    height: 1.75rem;
+    width: 1.75rem;
   }
 `,UC=de.div`
-  border: solid 0.3vh var(--opposite);
-  top: -5.8vh;
-  height: 13.5vh;
+  border: solid 0.1rem var(--opposite);
+  top: -2.9rem;
+  height: 6.75rem;
   position: absolute;
   z-index: 1;
   animation: ${ny} 3000ms forwards;
