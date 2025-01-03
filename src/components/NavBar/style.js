@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Navbar = styled(motion.nav)`
-  font-family: 'Eco Coding WGL4 W01 Regular';
+  font-family: var(--font);
   position: fixed;
   left: 0;
   top: 0;
@@ -72,7 +72,7 @@ export const NavbarLink = styled.div`
   &::before {
     content: '';
     position: absolute;
-    bottom: -0.174rem;
+    bottom: -0.7rem;
     left: 0;
     width: 100%;
     height: 0.174rem;
@@ -80,6 +80,12 @@ export const NavbarLink = styled.div`
     transform: scaleX(0);
     transition: transform 0.3s;
     box-shadow: var(--neon-glow);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
   }
 
   @media (max-width: 768px) {

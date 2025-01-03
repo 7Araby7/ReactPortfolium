@@ -1,25 +1,8 @@
 import styled from 'styled-components';
 
 // Container principal da seção de projetos
-export const ProjectsSection = styled.section`
-  padding: 5rem 7rem;
-  text-align: center;
 
-  @media (max-width: 768px) {
-    padding: 4rem 1.5rem;
-  }
-`;
-
-export const ProjectsTitle = styled.h2`
-  font-size: 3rem;
-  color: var(--text);
-  margin-bottom: 2rem;
-  font-weight: 700;
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-`;
+export const ProjectsTitle = styled.h2``;
 
 export const ProjectCardsContainer = styled.div`
   display: flex;
@@ -29,48 +12,6 @@ export const ProjectCardsContainer = styled.div`
 
   @media (max-width: 768px) {
     gap: 1.5rem;
-  }
-`;
-
-export const ViewMoreButton = styled.button`
-  font-family: 'Eco Coding WGL4 W01 Bold';
-  border: solid 0.05rem var(--accent);
-  background: none;
-  color: var(--accent);
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  border-radius: 0.4rem;
-  transition: ball 0.5s;
-
-  overflow: hidden;
-  transition: all 0.25s ease;
-
-  &:hover {
-    color: var(--primary);
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--accent);
-    z-index: -1;
-    border-radius: 0 0 50% 50%;
-    height: 0%;
-    transition: all 0.25s ease;
-  }
-
-  &:hover::before {
-    height: 190%;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
   }
 `;
 

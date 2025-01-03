@@ -9,9 +9,9 @@ export const AboutMeContainer = styled.section`
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  padding: 5vh 10vw;
+  padding: 0px 10vw;
   color: var(--text);
-  min-height: 100vh;
+  min-height: 80vh;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -20,14 +20,8 @@ export const AboutMeContainer = styled.section`
 `;
 
 // Título da Seção
-export const Title = styled.h1`
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-top: 0;
-  margin-bottom: 2rem;
+export const Title = styled.h2`
   text-align: left;
-  flex: 1;
 
   hr {
     width: 100%;
@@ -35,7 +29,6 @@ export const Title = styled.h1`
 
   @media (max-width: 768px) {
     text-align: center;
-    padding-left: 0;
   }
 `;
 
@@ -53,9 +46,7 @@ export const Description = styled.div`
   }
 `;
 
-export const HoverText = styled.p`
-  font-family: 'Eco Coding WGL4 W01 Regular';
-`;
+export const HoverText = styled.p``;
 
 // Card com a Imagem
 export const TiltCardWrapper = styled(motion.div)`
@@ -84,43 +75,5 @@ export const InnerCard = styled.div`
     height: 100%;
     object-fit: contain;
     transition: transform 0.4s ease;
-  }
-`;
-
-// Botão de Download (opcional)
-export const Button = styled.button`
-  font-family: 'Eco Coding WGL4 W01 Bold';
-  border: solid 0.05rem var(--accent);
-  background: none;
-  color: var(--accent);
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  border-radius: 0.4rem;
-  transition: ball 0.5s;
-  width: 150px;
-  overflow: hidden;
-  transition: all 0.25s ease;
-
-  &:hover {
-    color: var(--primary);
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--accent);
-    z-index: -1;
-    border-radius: 0 0 50% 50%;
-    height: 0%;
-    transition: all 0.25s ease;
-  }
-
-  &:hover::before {
-    height: 190%;
   }
 `;

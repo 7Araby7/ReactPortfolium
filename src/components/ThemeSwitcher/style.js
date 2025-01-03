@@ -28,6 +28,7 @@ const changeTheme = keyframes`
 
 // Componentes Styled
 export const ThemeSwitcher = styled(motion.div)`
+  z-index: 80;
   position: fixed;
   top: 1rem;
   left: 4rem;
@@ -50,6 +51,7 @@ export const ThemeSwitcher = styled(motion.div)`
 `;
 
 export const Button = styled.button`
+  cursor: pointer;
   border: none;
   left: -1.45rem;
   top: 3.8rem;

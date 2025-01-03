@@ -12,8 +12,8 @@ export const ProjectCard = styled.a`
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  width: 300px;
-  min-height: 350px;
+  width: 19rem;
+  min-height: 22.16rem;
   display: flex;
   flex-direction: column;
   align-items: baseline;
@@ -93,11 +93,8 @@ export const ProjectTitle = styled.h3`
 `;
 
 export const ProjectDescription = styled.p`
-  font-family: 'Eco Coding WGL4 W01 Bold';
   line-height: 1.6;
-  text-align: left;
   flex-grow: 1;
-  display: flex;
   margin: 0;
 
   @media (max-width: 768px) {
@@ -110,7 +107,7 @@ export const ProjectTools = styled.p`
   font-size: 0.9rem;
   line-height: 1.6;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;

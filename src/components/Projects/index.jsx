@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { projectData } from './ProjectData';
 import * as Styled from './style';
 import ProjectCard from './ProjectCard';
+import { Section, Button } from '../../styles/globalStyle';
 
 const Projects = () => {
   const [cards, setCards] = useState(projectData.slice(0, 3));
@@ -25,7 +26,7 @@ const Projects = () => {
   };
 
   return (
-    <Styled.ProjectsSection id="projects" ref={projectsRef}>
+    <Section id="projects" ref={projectsRef}>
       <Styled.ProjectsTitle>
         My Projects <hr />
       </Styled.ProjectsTitle>
@@ -41,8 +42,8 @@ const Projects = () => {
           />
         ))}
       </Styled.ProjectCardsContainer>
-      <Styled.ViewMoreButton onClick={handleClick}>{viewMoreClicked ? 'View Less' : 'View More'}</Styled.ViewMoreButton>
-    </Styled.ProjectsSection>
+      <Button onClick={handleClick}>{viewMoreClicked ? 'View Less' : 'View More'}</Button>
+    </Section>
   );
 };
 

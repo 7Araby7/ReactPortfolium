@@ -1,17 +1,19 @@
 export const lightTheme = {
   primary: '#f5f5f5',
   secondary: ' #bebebe',
-  text: '#333333',
-  opposite: '#242424',
+  text: '#181818',
+  opposite: '#181818',
   nav: '#f5f5f5c5',
+  font: 'Eco Coding WGL4 W01 Bold',
 };
 
 export const darkTheme = {
-  primary: '#242424',
+  primary: '#181818',
   secondary: '#303030',
-  text: '#ffffff',
+  text: '#f5f5f5',
   opposite: '#f5f5f5',
-  nav: '#242424d3',
+  nav: '#181818d3',
+  font: 'Eco Coding WGL4 W01 Regular',
 };
 
 export const colorTheme = (color, dark) => {

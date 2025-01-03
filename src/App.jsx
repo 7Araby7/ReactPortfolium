@@ -5,7 +5,6 @@ import { lightTheme, darkTheme, colorTheme } from './styles/theme';
 import GlobalStyle from './styles/globalStyle';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
-import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -71,9 +70,9 @@ function App() {
     initializePreferences();
     const removeListener = addThemeListener();
 
-    /* setTimeout(() => {
+    setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 50); */
+    }, 200);
 
     return removeListener;
   }, [addThemeListener]);
@@ -106,9 +105,6 @@ function App() {
       </MotionWrapper>
       <MotionWrapper variants={fadeInVariants}>
         <Projects />
-      </MotionWrapper>
-      <MotionWrapper threshold={0.4} variants={fadeInVariants}>
-        <Skills />
       </MotionWrapper>
       <MotionWrapper variants={fadeInVariants}>
         <Contact />

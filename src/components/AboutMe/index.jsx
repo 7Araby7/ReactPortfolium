@@ -5,6 +5,8 @@ import P from 'prop-types';
 import * as Styled from './style';
 import profileImage from '../../assets/png/profile.png';
 import resume from '../../assets/pdf/resume.pdf';
+import { Section, Button } from '../../styles/globalStyle';
+import Skills from './Skills';
 
 const ROTATION_RANGE = 32.5;
 const HALF_ROTATION_RANGE = 32.5 / 2;
@@ -50,36 +52,39 @@ const AboutMe = ({ dark }) => {
   };
 
   return (
-    <Styled.AboutMeContainer id="aboutMe">
-      <div>
-        <Styled.Title>
-          About Me <hr />
-        </Styled.Title>
-        <Styled.Description>
-          <Styled.HoverText>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, eveniet nesciunt cumque minima qui nisi
-            illo quaerat voluptas repudiandae sequi earum debitis dolore autem quis optio, dolores, ad aspernatur
-            molestiae?
-          </Styled.HoverText>
-          <Styled.Button href={resume} download="Gabriel_Resume">
-            Resume
-          </Styled.Button>
-        </Styled.Description>
-      </div>
-      <Styled.TiltCardWrapper
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          transform,
-          boxShadow,
-        }}
-      >
-        <Styled.InnerCard>
-          <img src={profileImage} alt="Profile" />
-        </Styled.InnerCard>
-      </Styled.TiltCardWrapper>
-    </Styled.AboutMeContainer>
+    <Section>
+      <Styled.AboutMeContainer id="aboutMe">
+        <div>
+          <Styled.Title>
+            About Me <hr />
+          </Styled.Title>
+          <Styled.Description>
+            <Styled.HoverText>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, eveniet nesciunt cumque minima qui nisi
+              illo quaerat voluptas repudiandae sequi earum debitis dolore autem quis optio, dolores, ad aspernatur
+              molestiae?
+            </Styled.HoverText>
+            <Button href={resume} download="Gabriel_Resume">
+              Resume
+            </Button>
+          </Styled.Description>
+        </div>
+        <Styled.TiltCardWrapper
+          ref={ref}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            transform,
+            boxShadow,
+          }}
+        >
+          <Styled.InnerCard>
+            <img src={profileImage} alt="Profile" />
+          </Styled.InnerCard>
+        </Styled.TiltCardWrapper>
+      </Styled.AboutMeContainer>
+      <Skills />
+    </Section>
   );
 };
 
