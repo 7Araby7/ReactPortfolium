@@ -1,4 +1,51 @@
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiGit, SiTypescript, SiBootstrap, SiPython } from 'react-icons/si'; // Importa os ícones
+import { useEffect, useRef, useState } from 'react';
+
+import * as Styled from './style';
+import { skills } from './SkillsList';
+
+const Skills = () => {
+  // Memoriza a lista duplicada para evitar recriação
+  const listRef = useRef(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (listRef.current) {
+      const totalWidth = listRef.current.scrollWidth;
+      setWidth(totalWidth);
+    }
+  }, [listRef]);
+
+  return (
+    <Styled.DIV>
+      <Styled.SkillsList
+        ref={listRef}
+        initial={{ x: 0 }}
+        animate={{ x: `-${width / 3}px` }} // Ajuste dinâmico
+        transition={{
+          repeat: Infinity,
+          duration: 30,
+          ease: 'linear',
+        }}
+        style={{
+          display: 'flex',
+          gap: '1rem',
+          width: `${width}px`,
+        }}
+      >
+        {skills.map((skill, index) => (
+          <Styled.SkillTag key={index} href={skill.link}>
+            {skill.icon}
+            {skill.title}
+          </Styled.SkillTag>
+        ))}
+      </Styled.SkillsList>
+    </Styled.DIV>
+  );
+};
+
+export default Skills;
+
+/* import { SiHtml5, SiCss3, SiJavascript, SiReact, SiGit, SiTypescript, SiBootstrap, SiPython } from 'react-icons/si'; // Importa os ícones
 
 import * as Styled from './style';
 
@@ -44,18 +91,5 @@ const Skills = () => {
     </Styled.SkillsList>
   );
 };
-
 export default Skills;
-
-/* { title: 'HTML5', link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-          { title: 'CSS3', link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
-          { title: 'JavaScript', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
-          { title: 'React', link: 'https://react.dev/' },
-          { title: 'Node.js', link: 'https://nodejs.org/en/docs' },
-          { title: 'Python', link: 'https://docs.python.org/3/' },
-          { title: 'UI/UX Design', link: 'https://www.interaction-design.org/literature/topics/ui-design' },
-          {
-            title: 'Responsive Design',
-            link: 'https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design',
-          },
-          { title: 'Git', link: 'https://git-scm.com/doc' }, */
+ */

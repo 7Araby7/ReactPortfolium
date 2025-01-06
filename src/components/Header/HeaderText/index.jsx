@@ -4,14 +4,16 @@ import P from 'prop-types';
 import * as Styled from './style';
 import SplittedString from './SplittedString';
 
-const TARGET_TEXT = 'hi there, my name is';
-const SECOND_TARGET_TEXT = 'and I bring designs to life on the web.';
+const TARGET_TEXT_EN = '<hi there, my name is>';
+const SECOND_TARGET_TEXT_EN = '</and I bring designs to life on the web>';
+const TARGET_TEXT_PT = '<olá, meu nome é>';
+const SECOND_TARGET_TEXT_PT = '</e eu dou vida a designs na web>';
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 40;
 
 const CHARS = '!@#$%^&*():{};|,.<>/?';
 
-const HeaderText = ({ animate }) => {
+const HeaderText = ({ animate, language = 'us' }) => {
   const intervalRefs = useRef([null, null]);
 
   const [text1, setText1] = useState('');
@@ -57,14 +59,19 @@ const HeaderText = ({ animate }) => {
       setText1('');
       setText2('');
       const localRefs = [...intervalRefs.current];
-      scramble(TARGET_TEXT, setText1, 0);
-      scramble(SECOND_TARGET_TEXT, setText2, 1);
+      if (language === 'us') {
+        scramble(TARGET_TEXT_EN, setText1, 0);
+        scramble(SECOND_TARGET_TEXT_EN, setText2, 1);
+      } else {
+        scramble(TARGET_TEXT_PT, setText1, 0);
+        scramble(SECOND_TARGET_TEXT_PT, setText2, 1);
+      }
 
       return () => {
         localRefs.forEach(clearInterval);
       };
     }
-  }, [animate, scramble]);
+  }, [animate, language, scramble]);
 
   return (
     <Styled.Container>
@@ -74,6 +81,7 @@ const HeaderText = ({ animate }) => {
       <Styled.NameContainer>
         <SplittedString text="Gabriel" />
         <SplittedString text="Brunhara" delay={9} />
+        <span className="barra"></span>
       </Styled.NameContainer>
       <Styled.Paragraph>
         <span>{text2}</span>
@@ -84,6 +92,7 @@ const HeaderText = ({ animate }) => {
 
 HeaderText.propTypes = {
   animate: P.bool.isRequired,
+  language: P.string,
 };
 
 export default HeaderText;

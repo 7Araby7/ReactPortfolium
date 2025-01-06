@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Navbar = styled(motion.nav)`
+  color: var(--text);
   font-family: var(--font);
   position: fixed;
   left: 0;
@@ -9,9 +10,9 @@ export const Navbar = styled(motion.nav)`
   width: 100%;
   padding: 1.45rem;
   background: var(--nav);
-  backdrop-filter: blur(1.16rem);
+  backdrop-filter: var(--blur);
   z-index: 100;
-  border-bottom: ${({ isChecked }) => (isChecked ? 'none' : '0.174rem solid var(--accent)')};
+  border-bottom: 0.174rem solid var(--accent);
 
   label {
     display: none;
@@ -26,6 +27,7 @@ export const Navbar = styled(motion.nav)`
     padding: 0.5rem;
 
     label {
+      padding-left: 10px;
       font-size: 20px;
       display: block;
     }
@@ -42,21 +44,9 @@ export const NavbarList = styled.ul`
   padding: 0;
 
   @media (max-width: 768px) {
-    display: none;
+    display: ${({ $isChecked }) => ($isChecked ? 'flex' : 'none')};
+    padding: 30px;
     flex-direction: column;
-    text-align: center;
-
-    input[type='checkbox']:checked + & {
-      display: flex;
-      position: absolute;
-      top: 100%;
-      left: 0%;
-      width: 100%;
-      background: var(--nav);
-      backdrop-filter: blur(1.16rem);
-      padding: 1rem 0;
-      border-bottom: 0.174rem solid var(--accent);
-    }
   }
 `;
 
@@ -89,8 +79,12 @@ export const NavbarLink = styled.div`
   }
 
   @media (max-width: 768px) {
-    &::before {
-      transform: scaleX(0.19);
+    text-align: center;
+
+    &:hover {
+      &::before {
+        transform: scaleX(0);
+      }
     }
   }
 `;

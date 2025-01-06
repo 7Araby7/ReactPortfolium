@@ -1,37 +1,15 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-// Animações
-/* const lighting = keyframes
-  0% {
-    color: var(--text);
-    text-shadow: none;
-  }
-  75% {
-    color: var(--text);
-    text-shadow: none;
-  }
-  100% {
-    color: var(--accent);
-    text-shadow: var(--neon-glow);
-  }
-; */
-
-/* const sumir = keyframes
-  0% {
+const blink = keyframes`
+  0%, 100%{
     opacity: 1;
   }
   50%{
-    transform: translateY(50px -50px) rotate(45deg);
-    opacity: 0.5
-  }
-  100% {
-    transform: translate(100px, -100px) rotate(90deg);
     opacity: 0;
   }
-; */
+`;
 
-// Componentes Styled
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,7 +52,19 @@ export const NameContainer = styled.div`
   flex-direction: row;
   gap: 3rem;
 
-  @media (max-width: 768px) {
+  .barra {
+    border: 3px solid var(--text);
+    height: 50px;
+    transform: translate(-40px, 5px);
+    animation: ${blink} 1s steps(1, start) infinite;
+    animation-delay: 2.2s;
+    opacity: 0;
+  }
+
+  @media (max-width: 820px) {
+    .barra {
+      display: none;
+    }
     flex-direction: column;
     gap: 0;
   }

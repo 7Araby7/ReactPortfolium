@@ -2,18 +2,20 @@ export const lightTheme = {
   primary: '#f5f5f5',
   secondary: ' #bebebe',
   text: '#181818',
-  opposite: '#181818',
   nav: '#f5f5f5c5',
   font: 'Eco Coding WGL4 W01 Bold',
+  border: '0.1rem',
+  blur: 'blur(0.5rem)',
 };
 
 export const darkTheme = {
   primary: '#181818',
   secondary: '#303030',
   text: '#f5f5f5',
-  opposite: '#f5f5f5',
   nav: '#181818d3',
   font: 'Eco Coding WGL4 W01 Regular',
+  border: '0.05rem',
+  blur: 'blur(1.16rem)',
 };
 
 export const colorTheme = (color, dark) => {
@@ -37,16 +39,13 @@ export const colorTheme = (color, dark) => {
       accent = '#13ffe5';
       break;
     case 'blue':
-      accent = '#13d0ff';
+      accent = '#1381ff';
       break;
     case 'purple':
       accent = '#a313ff';
       break;
     case 'pink':
       accent = '#ff13cf';
-      break;
-    case 'magenta':
-      accent = '#ff13ff';
       break;
     case 'themeOposite':
       dark ? (accent = '#f5f5f5') : (accent = '#242424');

@@ -7,7 +7,7 @@ import { useState } from 'react';
 import * as Styled from './style';
 import MotionWrapper from '../../../utils/MotionWrapper';
 
-const ProjectCard = ({ title, description, link, tools, index }) => {
+const ProjectCard = ({ title, description, link, tools }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -63,7 +63,6 @@ ProjectCard.propTypes = {
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   tools: PropTypes.array.isRequired,
-  index: PropTypes.number.isRequired,
 };
 
 export default ProjectCard;

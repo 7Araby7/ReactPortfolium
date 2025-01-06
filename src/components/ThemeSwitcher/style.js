@@ -29,7 +29,7 @@ const changeTheme = keyframes`
 // Componentes Styled
 export const ThemeSwitcher = styled(motion.div)`
   z-index: 80;
-  position: fixed;
+  position: absolute;
   top: 1rem;
   left: 4rem;
   display: flex;
@@ -60,8 +60,8 @@ export const Button = styled.button`
   z-index: 2;
   border-radius: 50%;
   animation: ${apearTheme} 3000ms forwards;
-  background-color: var(--opposite);
-  filter: drop-shadow(0 0 1rem var(--opposite));
+  background-color: var(--text);
+  filter: drop-shadow(0 0 1rem var(--text));
   overflow: hidden;
   width: 3rem;
   height: 3rem;
@@ -76,7 +76,7 @@ export const Button = styled.button`
 `;
 
 export const Line = styled.div`
-  border: solid 0.1rem var(--opposite);
+  border: solid 0.1rem var(--text);
   top: -2.9rem;
   height: 6.75rem;
   position: absolute;

@@ -7,7 +7,7 @@ const SplittedString = ({ text, delay = 0 }) => {
     <Styled.StringContainer>
       {text.split('').map((char, idx) => (
         <Styled.Letter key={idx} $index={idx} $delay={delay}>
-          <b>{char}</b>
+          {char}
         </Styled.Letter>
       ))}
     </Styled.StringContainer>

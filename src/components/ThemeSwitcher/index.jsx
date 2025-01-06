@@ -1,4 +1,4 @@
-import { useMotionValueEvent, useScroll } from 'framer-motion';
+/* import { useMotionValueEvent, useScroll } from 'framer-motion'; */
 import P from 'prop-types';
 import { useEffect, useState } from 'react';
 import { BsMoonStars } from 'react-icons/bs';
@@ -10,7 +10,7 @@ const ThemeSwitcher = ({ handleThemeToggle, dark }) => {
   const [isMoon, setisMoon] = useState(!dark);
   const [animate, setAnimate] = useState(false);
 
-  const [isVisible, setIsVisible] = useState(true);
+  /* const [isVisible, setIsVisible] = useState(true);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (current) => {
@@ -18,7 +18,7 @@ const ThemeSwitcher = ({ handleThemeToggle, dark }) => {
     const direction = current > previous ? 'down' : 'up';
 
     setIsVisible(direction === 'up');
-  });
+  }); */
 
   useEffect(() => {
     setisMoon(!dark);
@@ -40,9 +40,9 @@ const ThemeSwitcher = ({ handleThemeToggle, dark }) => {
   return (
     <Styled.ThemeSwitcher
       $animate={animate}
-      initial={{ y: 0 }}
+      /* initial={{ y: 0 }}
       animate={{ y: isVisible ? 0 : '-200px' }}
-      transition={{ type: 'tween', duration: 0.3, delay: 0.3 }}
+      transition={{ type: 'tween', duration: 0.3, delay: 0.3 }} */
     >
       <Styled.Button onClick={handleClick}>
         {isMoon ? <BsMoonStars color="var(--primary)" /> : <TbSunHigh color="var(--primary)" />}

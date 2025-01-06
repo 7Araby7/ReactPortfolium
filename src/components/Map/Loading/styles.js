@@ -10,16 +10,17 @@ const spin = keyframes`
 `;
 
 const Spinner = styled.div`
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
   &::after {
     content: '';
-    width: 10px;
-    height: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-top: 2px solid var(--accent);
+    width: 25px;
+    height: 25px;
+    border: 3px solid var(--secondary);
+    border-top: 3px solid var(--accent);
     border-radius: 50%;
     animation: ${spin} 1s linear infinite;
   }

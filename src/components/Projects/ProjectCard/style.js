@@ -13,7 +13,7 @@ export const ProjectCard = styled.a`
     transform 0.2s ease,
     box-shadow 0.2s ease;
   width: 19rem;
-  min-height: 22.16rem;
+  min-height: 24.16rem;
   display: flex;
   flex-direction: column;
   align-items: baseline;
@@ -37,7 +37,7 @@ export const ProjectCard = styled.a`
 
   @media (max-width: 768px) {
     height: 300px;
-    width: 250px;
+    min-width: 250px;
     padding: 0 1.5rem;
     min-height: auto;
   }
@@ -96,6 +96,7 @@ export const ProjectDescription = styled.p`
   line-height: 1.6;
   flex-grow: 1;
   margin: 0;
+  text-align: justify;
 
   @media (max-width: 768px) {
     line-height: 1.4;

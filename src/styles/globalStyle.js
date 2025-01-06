@@ -12,13 +12,14 @@ const GlobalStyle = createGlobalStyle`
     --primary: ${(props) => props.theme.primary};
     --secondary: ${(props) => props.theme.secondary};
     --text: ${(props) => props.theme.text};
-    --opposite: ${(props) => props.theme.opposite};
     --nav: ${(props) => props.theme.nav};
     --accent: ${(props) => props.theme.color.accent};
     --light-accent: ${(props) => props.theme.color.lightAccent};
     --lightter-accent: ${(props) => props.theme.color.lightterAccent};
     --neon-glow: ${(props) => props.theme.color.neonGlow};
     --font: ${(props) => props.theme.font};
+    --border: ${(props) => props.theme.border};
+    --blur: ${(props) => props.theme.blur};
   }
 
   body {
@@ -30,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
+    user-select: none;
     font-size: 3rem;
     color: var(--text);
     margin-bottom: 2rem;
@@ -82,6 +84,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Section = styled.section`
+  overflow: hidden;
+  min-height: 70vh;
   padding: 5rem 7rem;
   text-align: center;
 
@@ -91,15 +95,16 @@ export const Section = styled.section`
 `;
 
 export const Button = styled.button`
+  cursor: pointer;
   font-family: 'Eco Coding WGL4 W01 Bold';
-  min-width: 150px;
-  border: solid 0.05rem var(--accent);
+  min-width: 0px;
+  border: solid var(--border) var(--accent);
   background: transparent;
   color: var(--text);
-  padding: 1rem 2rem;
+  padding: ${(props) => props.$padding};
+  font-size: ${(props) => props.$fontSize};
+  margin-top: ${(props) => props.$marginTop};
   border-radius: 0.4rem;
-  font-size: 1.2rem;
-  margin-top: 2rem;
   position: relative;
   overflow: hidden;
   transition: all 0.25s ease;
@@ -130,6 +135,10 @@ export const Button = styled.button`
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
+`;
+
+export const Highlight = styled.span`
+  color: var(--accent);
 `;
 
 export default GlobalStyle;

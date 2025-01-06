@@ -86,7 +86,7 @@ export const ButtonTeal = styled(Button)`
 `;
 
 export const ButtonBlue = styled(Button)`
-  background-color: #13d0ff;
+  background-color: #1381ff;
 `;
 
 export const ButtonPurple = styled(Button)`
@@ -97,10 +97,6 @@ export const ButtonPink = styled(Button)`
   background-color: #ff13d0;
 `;
 
-export const ButtonMagenta = styled(Button)`
-  background-color: #ff13ff;
-`;
-
 export const ButtonTheme = styled(Button)`
-  background-color: var(--opposite);
+  background-color: var(--text);
 `;

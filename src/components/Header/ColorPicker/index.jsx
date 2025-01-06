@@ -29,10 +29,7 @@ const ColorPicker = ({ handleColor }) => {
       <Styled.ButtonPink $index={8} onClick={() => handleColor('pink')}>
         <Styled.Hole />
       </Styled.ButtonPink>
-      <Styled.ButtonMagenta $index={9} onClick={() => handleColor('magenta')}>
-        <Styled.Hole />
-      </Styled.ButtonMagenta>
-      <Styled.ButtonTheme $index={10} onClick={() => handleColor('themeOposite')}>
+      <Styled.ButtonTheme $index={9} onClick={() => handleColor('themeOposite')}>
         <Styled.Hole />
       </Styled.ButtonTheme>
     </Styled.colorPicker>
