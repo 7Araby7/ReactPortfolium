@@ -37,7 +37,7 @@ const ProjectCard = ({ title, description, link, tools, index }) => {
       <MotionWrapper variants={fadeInVariants} threshold={threshold}>
         <Styled.ProjectCard $side={side}>
           <Styled.Img $side={side} href={link} target="_blank" rel="noopener noreferrer">
-            <img src="/ReactPortfolium/assets/img/teste.png" alt="site teste" />
+            <img src="/ReactPortfolio/assets/img/teste.png" alt="site teste" />
           </Styled.Img>
           <Styled.ProjectTitle $side={side}>{title}</Styled.ProjectTitle>
           <Styled.ProjectDescription $side={side}>{description}</Styled.ProjectDescription>

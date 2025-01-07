@@ -14,8 +14,8 @@ const TITLE_PT = 'Sobre mim';
 
 const DESCRIPTION_EN = (
   <>
-    <Highlight>Hello, world!</Highlight> I,m Gabriel, a <Highlight>fullstack developer</Highlight> from Brazil, fluent
-    in <Highlight>Portuguese</Highlight> and <Highlight>English</Highlight>, always seeking{' '}
+    Console.log(<Highlight>"Hello, world!"</Highlight>); I,m Gabriel, a <Highlight>fullstack developer</Highlight> from
+    Brazil, fluent in <Highlight>Portuguese</Highlight> and <Highlight>English</Highlight>, always seeking{' '}
     <Highlight>new opportunities</Highlight>.<br /> <br />
     With a strong foundation in <Highlight>JavaScript</Highlight>, <Highlight>HTML</Highlight>,{' '}
     <Highlight>CSS</Highlight>, and <Highlight>PHP</Highlight>, I’ve built a solid skill set that includes working with
@@ -36,9 +36,9 @@ const DESCRIPTION_EN = (
 
 const DESCRIPTION_PT = (
   <>
-    <Highlight>Olá, mundo!</Highlight> Meu nome é Gabriel, sou um <Highlight>desenvolvedor fullstack</Highlight> de
-    Curitiba, fluente em <Highlight>português</Highlight> e <Highlight>inglês</Highlight>, sempre buscando{' '}
-    <Highlight>novas oportunidades</Highlight>.<br /> <br />
+    Console.log(<Highlight>"Olá, mundo!"</Highlight>); Meu nome é Gabriel, sou um{' '}
+    <Highlight>desenvolvedor fullstack</Highlight> de Curitiba, fluente em <Highlight>português</Highlight> e{' '}
+    <Highlight>inglês</Highlight>, sempre buscando <Highlight>novas oportunidades</Highlight>.<br /> <br />
     Com uma base sólida em <Highlight>JavaScript</Highlight>, <Highlight>HTML</Highlight>, <Highlight>CSS</Highlight> e{' '}
     <Highlight>PHP</Highlight>, eu desenvolvi um conjunto de habilidades que inclui trabalhar com bancos de dados como{' '}
     <Highlight>MySQL</Highlight> e <Highlight>PostgreSQL</Highlight>.<br /> <br />
@@ -148,7 +148,7 @@ const AboutMe = ({ dark, language = 'us' }) => {
           </Styled.TiltCardWrapper>
         </MotionWrapper>
       </Styled.AboutMeContainer>
-      <MotionWrapper threshold={0.4} variants={fadeInVariants}>
+      <MotionWrapper threshold={0.1} variants={fadeInVariants}>
         <Skills />
       </MotionWrapper>
     </Section>

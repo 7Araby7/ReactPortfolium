@@ -128,7 +128,7 @@ const Contact = ({ language = 'us', color = '' }) => {
                 </a>
               </Styled.ContactLinks>
               <Styled.Gif>
-                <img src={`/ReactPortfolium/assets/gif/pool${color}.gif`} alt="DeadPool heart" />
+                <img src={`/ReactPortfolio/assets/gif/pool${color}.gif`} alt="DeadPool heart" />
               </Styled.Gif>
               <Styled.ContactEmail>
                 <FaEnvelope size={30} color="var(--text)" />

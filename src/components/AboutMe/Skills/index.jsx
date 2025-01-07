@@ -7,32 +7,51 @@ const Skills = () => {
   // Memoriza a lista duplicada para evitar recriação
   const listRef = useRef(null);
   const [width, setWidth] = useState(0);
+  const [isDesktop, setIsDesktop] = useState();
+
+  const updateMode = () => {
+    const width = window.innerWidth;
+    setIsDesktop(width > 768);
+  };
 
   useEffect(() => {
     if (listRef.current) {
       const totalWidth = listRef.current.scrollWidth;
       setWidth(totalWidth);
     }
-  }, [listRef]);
+
+    updateMode();
+    window.addEventListener('resize', updateMode);
+
+    return () => {
+      window.removeEventListener('resize', updateMode);
+    };
+  }, [listRef, isDesktop]);
+
+  const skillsToDisplay = isDesktop ? skills : skills.slice(0, skills.length / 3);
 
   return (
     <Styled.DIV>
       <Styled.SkillsList
         ref={listRef}
         initial={{ x: 0 }}
-        animate={{ x: `-${width / 3}px` }} // Ajuste dinâmico
+        animate={isDesktop ? { x: `-${width / 3}px` } : { x: 0 }}
         transition={{
           repeat: Infinity,
           duration: 30,
           ease: 'linear',
         }}
-        style={{
-          display: 'flex',
-          gap: '1rem',
-          width: `${width}px`,
-        }}
+        style={
+          isDesktop
+            ? {
+                display: 'flex',
+                gap: '1rem',
+                width: `${width}px`,
+              }
+            : {}
+        }
       >
-        {skills.map((skill, index) => (
+        {skillsToDisplay.map((skill, index) => (
           <Styled.SkillTag key={index} href={skill.link}>
             {skill.icon}
             {skill.title}

@@ -19,6 +19,11 @@ export const SkillsList = styled(motion.div)`
   box-sizing: border-box;
   /* border: solid 3px white; */
   width: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 export const SkillTag = styled.a`

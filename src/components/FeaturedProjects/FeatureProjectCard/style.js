@@ -19,7 +19,7 @@ export const ProjectCard = styled.div`
     overflow: hidden;
     justify-content: top;
     align-items: center;
-    max-width: 300px;
+    max-width: 330px;
   }
 `;
 
