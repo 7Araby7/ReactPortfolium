@@ -81,10 +81,9 @@ const AboutMe = ({ dark, language = 'us' }) => {
   const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
   //shadow
-  const shadow = dark ? '200px' : '40px';
   const ySpringShadow = useTransform(ySpring, (latestValue) => -latestValue * 3);
   const xSpringShadow = useTransform(xSpring, (latestValue) => latestValue * 3);
-  const boxShadow = useMotionTemplate`${ySpringShadow}px ${xSpringShadow}px ${shadow} var(--lightter-accent)`;
+  const boxShadow = useMotionTemplate`${ySpringShadow}px ${xSpringShadow}px 40px var(--lightter-accent)`;
 
   const handleMouseMove = (e) => {
     if (!ref.current) return [0, 0];

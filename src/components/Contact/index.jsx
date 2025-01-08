@@ -116,7 +116,7 @@ const Contact = ({ language = 'us', color = '' }) => {
                 <a href="https://wa.me/5541998995100 " target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp size={40} />
                 </a>
-                <a href="https://github.com/7Araby7" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/GabrielBrunhara" target="_blank" rel="noopener noreferrer">
                   <FaGithub size={40} />
                 </a>
                 <a
