@@ -107,7 +107,7 @@ export const ProjectTools = styled.p`
   display: flex;
   gap: 0.3rem;
   flex-wrap: wrap;
-  width: 100%;
+  width: fit-content;
   justify-content: ${({ $side }) => ($side ? 'right' : 'left')};
 
   span {
