@@ -3,7 +3,7 @@ export const projectDataEn = [
     title: 'Minimalist Portfólio template',
     description:
       'A smoother and cleaner version of my portfolio, showcasing a refined and polished approach to my work, with a focus on simplicity and elegance.',
-    link: 'https://7araby7.github.io/CleanTemplateportfolio/',
+    link: 'https://GabrielBrunhara.github.io/CleanTemplateportfolio/',
     tools: ['react', 'bootstrap', 'framer-motion'],
   },
   {
