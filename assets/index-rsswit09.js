@@ -1109,11 +1109,14 @@ Error generating stack: `+x.message+`
   min-height: 300px;
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1260px) {
+    width: 100%;
+  }
+
+  @media (max-width: 910px) {
     overflow: hidden;
     justify-content: top;
     align-items: center;
-    max-width: 330px;
   }
 `,h5=Ie.a`
   img {
@@ -1131,7 +1134,7 @@ Error generating stack: `+x.message+`
       transform: scale(1.01) translateY(-50%);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 910px) {
       filter: brightness(0.2);
       width: 100%;
       height: 100%;
@@ -1143,8 +1146,8 @@ Error generating stack: `+x.message+`
   z-index: 1;
   font-size: 1.6rem;
   color: var(--text);
-  margin-top: 4rem;
-  @media (max-width: 768px) {
+  margin-top: 0;
+  @media (max-width: 910px) {
     padding: 20px;
     margin-top: 0;
     text-align: center;
@@ -1157,7 +1160,7 @@ Error generating stack: `+x.message+`
   border-radius: 10px;
   z-index: 1;
   line-height: 1.6;
-  width: 50%;
+  width: 60%;
   padding: 10px;
   transition: all 0.3s;
 
@@ -1165,8 +1168,11 @@ Error generating stack: `+x.message+`
     transform: ${({$side:n})=>n?"translate(-7px, -7px);":"translate(7px, -7px);"};
     box-shadow: ${({$side:n})=>n?"7px 7px 5px rgba(0, 0, 0, 0.5)":"-7px 7px 5px rgba(0, 0, 0, 0.5)"};
   }
+  @media (max-width: 1260px) {
+    width: 80%;
+  }
 
-  @media (max-width: 768px) {
+  @media (max-width: 910px) {
     flex-grow: 1;
     line-height: 1.4;
     width: auto;
@@ -1193,7 +1199,7 @@ Error generating stack: `+x.message+`
     border: solid 0.5px transparent;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 910px) {
     font-size: 0.8rem;
     gap: 0.3rem;
     margin-top: 1.5rem;
