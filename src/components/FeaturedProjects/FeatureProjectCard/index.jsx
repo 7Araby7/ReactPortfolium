@@ -36,6 +36,7 @@ const ProjectCard = ({ title, description, link, tools, index }) => {
     <>
       <MotionWrapper variants={fadeInVariants} threshold={threshold}>
         <Styled.ProjectCard $side={side}>
+          <Styled.MobileLink href={link} target="_blank" rel="noopener noreferrer" />
           <Styled.Img $side={side} href={link} target="_blank" rel="noopener noreferrer">
             <img src="/ReactPortfolio/assets/img/teste.png" alt="site teste" />
           </Styled.Img>

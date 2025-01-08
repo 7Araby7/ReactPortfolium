@@ -15,11 +15,14 @@ export const ProjectCard = styled.div`
   min-height: 300px;
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1260px) {
+    width: 100%;
+  }
+
+  @media (max-width: 910px) {
     overflow: hidden;
     justify-content: top;
     align-items: center;
-    max-width: 330px;
   }
 `;
 
@@ -30,6 +33,7 @@ export const Img = styled.a`
     width: 55%;
     top: 50%;
     ${({ $side }) => ($side ? 'left' : 'right')}: 0;
+    border: solid 1.5px var(--accent);
     transform: translateY(-50%);
     border-radius: 10px;
     transition: all 0.5s;
@@ -39,7 +43,7 @@ export const Img = styled.a`
       transform: scale(1.01) translateY(-50%);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 910px) {
       filter: brightness(0.2);
       width: 100%;
       height: 100%;
@@ -53,8 +57,9 @@ export const ProjectTitle = styled.h3`
   z-index: 1;
   font-size: 1.6rem;
   color: var(--text);
-  margin-top: 4rem;
-  @media (max-width: 768px) {
+  margin-top: 0;
+  @media (max-width: 910px) {
+    color: #f5f5f5;
     padding: 20px;
     margin-top: 0;
     text-align: center;
@@ -69,7 +74,7 @@ export const ProjectDescription = styled.p`
   border-radius: 10px;
   z-index: 1;
   line-height: 1.6;
-  width: 50%;
+  width: 60%;
   padding: 10px;
   transition: all 0.3s;
 
@@ -77,8 +82,12 @@ export const ProjectDescription = styled.p`
     transform: ${({ $side }) => ($side ? 'translate(-7px, -7px);' : 'translate(7px, -7px);')};
     box-shadow: ${({ $side }) => ($side ? '7px 7px 5px rgba(0, 0, 0, 0.5)' : '-7px 7px 5px rgba(0, 0, 0, 0.5)')};
   }
+  @media (max-width: 1260px) {
+    width: 80%;
+  }
 
-  @media (max-width: 768px) {
+  @media (max-width: 910px) {
+    color: #f5f5f5;
     flex-grow: 1;
     line-height: 1.4;
     width: auto;
@@ -107,7 +116,8 @@ export const ProjectTools = styled.p`
     border: solid 0.5px transparent;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 910px) {
+    color: #f5f5f5;
     font-size: 0.8rem;
     gap: 0.3rem;
     margin-top: 1.5rem;
@@ -116,5 +126,18 @@ export const ProjectTools = styled.p`
     span {
       padding: 0.2rem 0.4rem;
     }
+  }
+`;
+
+export const MobileLink = styled.a`
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 999;
+
+  @media (max-width: 910px) {
+    display: block;
   }
 `;

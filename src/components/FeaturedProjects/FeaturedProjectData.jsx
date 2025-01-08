@@ -1,10 +1,10 @@
 export const projectDataEn = [
   {
-    title: 'E-Commerce Website',
+    title: 'Minimalist Portfólio template',
     description:
-      'A fully functional e-commerce website using React for the frontend and Node.js for the backend. Features include product catalog, user authentication, and order management.',
-    link: 'https://github.com/7Araby7/e-commerce-website',
-    tools: ['react', 'node.js', 'express', 'mongodb'],
+      'A smoother and cleaner version of my portfolio, showcasing a refined and polished approach to my work, with a focus on simplicity and elegance.',
+    link: 'https://7araby7.github.io/CleanTemplateportfolio/',
+    tools: ['react', 'bootstrap', 'framer-motion'],
   },
   {
     title: 'Personal Blog',
@@ -24,11 +24,11 @@ export const projectDataEn = [
 
 export const projectDataPt = [
   {
-    title: 'Site de E-Commerce',
+    title: 'Template de Portfólio Minimalista',
     description:
-      'Um site de e-commerce totalmente funcional usando React no frontend e Node.js no backend. As funcionalidades incluem catálogo de produtos, autenticação de usuário e gerenciamento de pedidos.',
-    link: 'https://github.com/7Araby7/e-commerce-website',
-    tools: ['react', 'node.js', 'express', 'mongodb'],
+      'Uma versão mais suave e limpa do meu portfólio, mostrando uma abordagem refinada e polida do meu trabalho, com foco na simplicidade e elegância.',
+    link: 'https://7araby7.github.io/CleanTemplateportfolio/',
+    tools: ['react', 'bootstrap', 'framer-motion'],
   },
   {
     title: 'Blog Pessoal',
