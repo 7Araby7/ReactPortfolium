@@ -27,6 +27,7 @@ const FeaturedProjects = ({ language }) => {
             description={project.description}
             link={project.link}
             tools={project.tools}
+            imgLink={project.imgLink}
             index={index}
           />
         ))}

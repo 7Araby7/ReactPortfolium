@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import * as Styled from './style';
 import MotionWrapper from '../../../utils/MotionWrapper';
 
-const ProjectCard = ({ title, description, link, tools, index }) => {
+const ProjectCard = ({ title, description, link, tools, imgLink, index }) => {
   const [threshold, setThreshold] = useState(0.1);
   const side = index % 2 === 0;
   const position = side ? 300 : -300;
@@ -38,7 +38,7 @@ const ProjectCard = ({ title, description, link, tools, index }) => {
         <Styled.ProjectCard $side={side}>
           <Styled.MobileLink href={link} target="_blank" rel="noopener noreferrer" />
           <Styled.Img $side={side} href={link} target="_blank" rel="noopener noreferrer">
-            <img src="/ReactPortfolio/assets/img/teste.png" alt="site teste" />
+            <img src={imgLink} alt={title} />
           </Styled.Img>
           <Styled.ProjectTitle $side={side}>{title}</Styled.ProjectTitle>
           <Styled.ProjectDescription $side={side}>{description}</Styled.ProjectDescription>
@@ -58,6 +58,7 @@ ProjectCard.propTypes = {
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   tools: PropTypes.array.isRequired,
+  imgLink: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
 };
 
