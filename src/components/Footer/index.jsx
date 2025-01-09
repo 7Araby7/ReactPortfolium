@@ -1,11 +1,11 @@
-import './style.css';
+import * as Styled from './style';
 
 const Footer = () => (
-  <footer className="footer">
-    <div className="footer-content">
+  <Styled.Footer>
+    <Styled.Content>
       <p>&copy; 2024 Gabriel Brunhara. All Rights Reserved.</p>
-    </div>
-  </footer>
+    </Styled.Content>
+  </Styled.Footer>
 );
 
 export default Footer;

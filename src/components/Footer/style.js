@@ -1,4 +1,6 @@
-.footer {
+import styled from 'styled-components';
+
+export const Footer = styled.footer`
   border-top: 2px solid var(--accent);
   background-color: var(--primary);
   color: var(--text); /* Cor do texto */
@@ -7,13 +9,13 @@
   font-size: 1rem;
   position: relative;
   width: 100%;
-}
+`;
 
-.footer-content {
+export const Content = styled.div`
   display: flex;
   justify-content: center;
-}
 
-.footer-content p {
-  margin: 0;
-}
+  p {
+    margin: 0;
+  }
+`;
