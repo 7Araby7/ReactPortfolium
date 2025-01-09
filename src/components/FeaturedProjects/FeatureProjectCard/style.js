@@ -141,3 +141,13 @@ export const MobileLink = styled.a`
     display: block;
   }
 `;
+
+export const ghIcon = styled.div`
+  z-index: 2000;
+
+  &:hover {
+    svg {
+      fill: var(--text);
+    }
+  }
+`;

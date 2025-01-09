@@ -14,6 +14,8 @@ const FeaturedProjects = ({ language }) => {
 
   const projectsRef = useRef(null);
 
+  console.log(projectData[0].ghLink);
+
   return (
     <Section id="projects" ref={projectsRef}>
       <Styled.ProjectsTitle>
@@ -25,7 +27,8 @@ const FeaturedProjects = ({ language }) => {
             key={index}
             title={project.title}
             description={project.description}
-            link={project.link}
+            deployLink={project.deployLink}
+            ghLink={project.ghLink}
             tools={project.tools}
             imgLink={project.imgLink}
             index={index}
