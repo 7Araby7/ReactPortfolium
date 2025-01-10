@@ -143,7 +143,7 @@ export const MobileLink = styled.a`
 `;
 
 export const ghIcon = styled.div`
-  z-index: 2000;
+  z-index: 1000;
 
   &:hover {
     svg {

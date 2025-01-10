@@ -3,7 +3,7 @@ import { useMotionValue, useSpring, useTransform, useMotionTemplate } from 'fram
 import P from 'prop-types';
 
 import * as Styled from './style';
-import profileImage from '../../assets/png/profile.png';
+import profileImage from '../../assets/png/profile2.jpg';
 import resume from '../../assets/pdf/resume.pdf';
 import { Section, Button, Highlight } from '../../styles/globalStyle';
 import Skills from './Skills';

@@ -38,7 +38,7 @@ export const Description = styled.div`
   line-height: 1.6;
   max-width: 600px;
   padding: 1rem;
-  text-align: justify;
+  text-align: center;
 
   @media (max-width: 768px) {
     text-align: center;
@@ -71,7 +71,8 @@ export const InnerCard = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.53);
 
   img {
-    width: 100%;
+    width: 130%;
+    transform: translateX(-40px);
     height: 100%;
     object-fit: contain;
     transition: transform 0.4s ease;

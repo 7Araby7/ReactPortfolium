@@ -18,13 +18,13 @@ export const projectDataEn = [
     imgLink: '/ReactPortfolio/assets/img/acaiStore.png',
   },
   {
-    title: 'Weather App',
+    title: 'Rick and Morty Wiki',
     description:
-      'A weather application that fetches real-time data from a weather API. Users can search for weather conditions by location and see the forecast for the upcoming days.',
-    deployLink: 'https://github.com/gabrielbrunhara/weather-app',
-    ghLink: 'https://github.com/gabrielbrunhara/weather-app',
-    tools: ['react', 'axios', 'css'],
-    imgLink: '/ReactPortfolio/assets/img/minTemplate.png',
+      'A web application that integrates the Rick and Morty API to display detailed information about the characters, featuring a search bar for filtering, a responsive layout, and pagination.',
+    deployLink: 'https://gabrielbrunhara.github.io/RickAndMortyCharacter',
+    ghLink: 'https://github.com/GabrielBrunhara/RickAndMortyCharacter',
+    tools: ['react', 'bootstrap', 'api-integration'],
+    imgLink: '/ReactPortfolio/assets/img/rickAndMorty.png',
   },
 ];
 
@@ -48,12 +48,12 @@ export const projectDataPt = [
     imgLink: '/ReactPortfolio/assets/img/acaiStore.png',
   },
   {
-    title: 'Aplicativo de Previsão do Tempo',
+    title: 'Rick and Morty Wiki',
     description:
-      'Um aplicativo de previsão do tempo que busca dados em tempo real de uma API meteorológica. Os usuários podem pesquisar as condições climáticas por localização e ver a previsão para os próximos dias.',
-    deployLink: 'https://github.com/gabrielbrunhara/weather-app',
-    ghLink: 'https://github.com/gabrielbrunhara/weather-app',
-    tools: ['react', 'axios', 'css'],
-    imgLink: '/ReactPortfolio/assets/img/minTemplate.png',
+      'Uma aplicação web que integra a API de Rick and Morty para exibir informações detalhadas sobre os personagens, com recursos como barra de pesquisa para filtragem, layout responsivo e paginação.',
+    deployLink: 'https://gabrielbrunhara.github.io/RickAndMortyCharacter',
+    ghLink: 'https://github.com/GabrielBrunhara/RickAndMortyCharacter',
+    tools: ['react', 'bootstrap', 'integração com API'],
+    imgLink: '/ReactPortfolio/assets/img/rickAndMorty.png',
   },
 ];
