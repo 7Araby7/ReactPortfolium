@@ -29,14 +29,14 @@ function App() {
     if (savedColorPreference) {
       setColorPicked(savedColorPreference);
     } else {
-      setColorPicked('purple');
+      setColorPicked('blue');
     }
 
     const savedLanguagePreference = localStorage.getItem('languagePreference');
     if (savedLanguagePreference) {
       setLanguage(savedLanguagePreference);
     } else {
-      setLanguage('us');
+      setLanguage('br');
     }
 
     const savedThemePreference = localStorage.getItem('themePreference');
