@@ -11,7 +11,7 @@ const Skills = () => {
 
   const updateMode = () => {
     const width = window.innerWidth;
-    setIsDesktop(width > 768);
+    setIsDesktop(width > 1000);
   };
 
   useEffect(() => {

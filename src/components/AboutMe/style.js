@@ -9,11 +9,10 @@ export const AboutMeContainer = styled.section`
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  padding: 0px 10vw;
   color: var(--text);
   min-height: 80vh;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     padding: 4vh 5vw;
   }

@@ -119,15 +119,11 @@ const AboutMe = ({ dark, language = 'us' }) => {
             <Styled.Description>
               <Styled.HoverText>{language === 'us' ? DESCRIPTION_EN : DESCRIPTION_PT}</Styled.HoverText>
               {/* sepa trar o botão fique melhor */}
-              <Button
-                $padding={'1rem 2rem'}
-                $fontSize={'1.2rem'}
-                $marginTop={'2rem'}
-                href={resume}
-                download="Gabriel_Resume"
-              >
-                {language === 'us' ? RESUME_EN : RESUME_PT}
-              </Button>{' '}
+              <a href={resume} download="Gabriel_Resume" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button $padding={'1rem 2rem'} $fontSize={'1.2rem'} $marginTop={'2rem'}>
+                  {language === 'us' ? RESUME_EN : RESUME_PT}
+                </Button>
+              </a>
             </Styled.Description>
           </MotionWrapper>
         </div>

@@ -20,7 +20,7 @@ export const SkillsList = styled(motion.div)`
   /* border: solid 3px white; */
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     justify-content: center;
     flex-wrap: wrap;
   }
