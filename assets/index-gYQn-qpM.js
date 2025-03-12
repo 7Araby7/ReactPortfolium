@@ -570,6 +570,7 @@ Error generating stack: `+x.message+`
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  height: 100%;
 
   /* Hover styles */
   &:hover,
