@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-// Animação para o conteúdo do header
+// Animação para o conteúdo do home
 const appearContent = keyframes`
   from {
     opacity: 0;
@@ -28,7 +28,7 @@ const flagPops = keyframes`
 `;
 
 // Styled Components
-export const Header = styled.header`
+export const Home = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -90,6 +90,6 @@ export const Language = styled.span`
   }
 `;
 
-export const HeaderContent = styled.div`
+export const HomeContent = styled.div`
   animation: ${appearContent} 4000ms forwards;
 `;

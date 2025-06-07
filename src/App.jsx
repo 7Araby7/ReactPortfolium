@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, colorTheme } from './styles/theme';
 import GlobalStyle from './styles/globalStyle';
 import NavBar from './components/NavBar';
-import Header from './components/Header';
+import Home from './components/Home';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -78,11 +78,11 @@ function App() {
       <GlobalStyle />
       <ThemeSwitcher handleThemeToggle={handleThemeToggle} dark={dark} />
       <NavBar language={language} />
-      <Header handleColor={handleColorPicked} handleLanguage={handleLanguageToggle} language={language} />
+      <Home handleColor={handleColorPicked} handleLanguage={handleLanguageToggle} language={language} />
       <AboutMe dark={dark} language={language} />
       <FeaturedProjects language={language} />
       <Projects language={language} />
-      <Map language={language} />
+      <Map language={language} dark={dark}  />
       <Contact language={language} color={colorPicked} />
       <Footer />
     </ThemeProvider>

@@ -13,7 +13,7 @@ const SHUFFLE_TIME = 40;
 
 const CHARS = '!@#$%^&*():{};|,.<>/?';
 
-const HeaderText = ({ animate, language = 'us' }) => {
+const HomeText = ({ animate, language = 'us' }) => {
   const intervalRefs = useRef([null, null]);
 
   const [text1, setText1] = useState('');
@@ -90,9 +90,9 @@ const HeaderText = ({ animate, language = 'us' }) => {
   );
 };
 
-HeaderText.propTypes = {
+HomeText.propTypes = {
   animate: P.bool.isRequired,
   language: P.string,
 };
 
-export default HeaderText;
+export default HomeText;

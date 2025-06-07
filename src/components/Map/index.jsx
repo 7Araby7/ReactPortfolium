@@ -13,12 +13,6 @@ import { Button, Section } from '../../styles/globalStyle';
 import { Loading } from './Loading';
 import MotionWrapper from '../../utils/MotionWrapper';
 
-/* const TITLE_EN = 'Sanding a hello from';
-const TITLE_PT = 'Mandando um olá de'; */
-
-/* const TITLE_EN = 'Where I am';
-const TITLE_PT = 'Onde estou'; */
-
 const TITLE_EN = 'Where to Find Me?';
 const TITLE_PT = 'Onde Me Encontrar?';
 
@@ -31,7 +25,7 @@ const YOU_PT = 'Você';
 const ALERT_EN = 'Permission to access GPS denied.';
 const ALERT_PT = 'Permissão para acesso ao GPS negada.';
 
-const Map = ({ language = 'us' }) => {
+const Map = ({ language = 'us', dark = false }) => {
   const fadeInVariants = {
     hidden: { opacity: 0, scale: 0, transition: { duration: 0.5 } },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
@@ -119,7 +113,7 @@ const Map = ({ language = 'us' }) => {
           >
             <ChangeView center={coords} />
             <TileLayer
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              url={`https://{s}.basemaps.cartocdn.com/${dark ? 'dark' : 'light'}_all/{z}/{x}/{y}{r}.png{`}
               attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors &copy; <a href='https://carto.com/'>CARTO</a>"
             />
             {userCoords && (
@@ -139,6 +133,7 @@ const Map = ({ language = 'us' }) => {
 
 Map.propTypes = {
   language: P.string,
+  dark: P.bool,
 };
 
 export default Map;
